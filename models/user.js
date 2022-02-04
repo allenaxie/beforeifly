@@ -18,6 +18,13 @@ const userSchema = new Schema({
     trim: true,
     minLength: 3,
     required: true
+  },
+  address: {
+    type: String,
+    required: true,
+  },
+  phoneNumber: {
+    type: String,
   }
 }, {
   timestamps: true,

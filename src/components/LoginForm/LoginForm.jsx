@@ -1,6 +1,7 @@
 import { useState } from 'react';
+import { useNavigate } from "react-router-dom";
 import * as usersService from '../../utilities/users-service';
-import {Form, Input, Button, Checkbox} from "antd";
+import {Form, Input, Button} from "antd";
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import "./LoginForm.css"
 
@@ -11,6 +12,7 @@ export default function LoginForm({ setUser }) {
   //   password: ''
   // });
   const [error, setError] = useState('');
+  const navigate = useNavigate();
 
   // function handleChange(evt) {
   //   setCredentials({ ...credentials, [evt.target.name]: evt.target.value });
@@ -18,7 +20,7 @@ export default function LoginForm({ setUser }) {
   // }
 
   async function handleSubmit(values) {
-    console.log(values)
+    console.log('values',values)
     // Prevent form from being submitted to the server
     // evt.preventDefault();
     try {
@@ -27,10 +29,14 @@ export default function LoginForm({ setUser }) {
       // payload of the JSON Web Token (JWT)
       const user = await usersService.login(values);
       setUser(user);
+      console.log('loginForm',user)
+      navigate('/')
     } catch {
       setError('Log In Failed - Try Again');
     }
   }
+
+ 
 
   return (
  <div>

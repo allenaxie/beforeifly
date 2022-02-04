@@ -11,8 +11,8 @@ import AuthPage from "../../pages/AuthPage/AuthPage";
 
 export default function NavBar({ user, setUser, collapsed, hasAccount, setHasAccount }) {
 
+  console.log('navbar',user)
 
-  console.log(hasAccount, 'yuuhhh')
   const {Sider} = Layout;
 
   function handleLogOut() {
@@ -22,6 +22,9 @@ export default function NavBar({ user, setUser, collapsed, hasAccount, setHasAcc
 
   return (
     <Menu theme="dark" mode="inline" defaultSelectedKeys={[1]}> 
+     <Menu.Item key="1" icon={<HomeOutlined />}>
+        <Link to="/">Home</Link>
+      </Menu.Item>
       {
         user ?
       <>
@@ -40,9 +43,6 @@ export default function NavBar({ user, setUser, collapsed, hasAccount, setHasAcc
       </>
       :
       <>
-      <Menu.Item key="1" icon={<HomeOutlined />}>
-        <Link to="/">Home</Link>
-      </Menu.Item>
       <Menu.Item key="2" icon={<UserAddOutlined />}>
         <Link to="/users" onClick={() => setHasAccount(false)}>Register</Link>
       </Menu.Item>

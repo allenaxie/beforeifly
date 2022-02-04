@@ -10,9 +10,10 @@ export async function signUp(userData) {
   return getUser();
 }
 
-export async function login(credentials) {
-  const token = await usersAPI.login(credentials);
+export async function login(values) {
+  const token = await usersAPI.login(values);
   localStorage.setItem('token', token);
+  console.log('users-service', token)
   return getUser();
 }
 

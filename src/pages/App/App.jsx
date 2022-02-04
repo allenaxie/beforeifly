@@ -25,6 +25,8 @@ export default function App() {
     setIsCollapsed(!isCollapsed);
   }
 
+  console.log('app-user',user)
+
   return (
     <main className="App">
       <Layout>
@@ -34,7 +36,7 @@ export default function App() {
           collapsed={isCollapsed}
         >
           <div className="logo"></div>
-          <NavBar collapsed={isCollapsed} hasAccount={hasAccount} setHasAccount={setHasAccount}/>
+          <NavBar collapsed={isCollapsed} user={user} hasAccount={hasAccount} setHasAccount={setHasAccount}/>
         </Sider>
         <Layout>
           <Header className="header">

@@ -4,8 +4,6 @@ import {useState} from "react";
 
 function AuthPage({ setUser, hasAccount }) {
 
- console.log(hasAccount)
-
   return (
     <main>
       <h1>AuthPage</h1>

@@ -7,6 +7,8 @@ class SignUpForm extends Component {
     email: '',
     password: '',
     confirm: '',
+    address: '',
+    phoneNumber: '',
     error: ''
   }
 
@@ -19,6 +21,7 @@ class SignUpForm extends Component {
   }
 
   handleSubmit = async (evt) => {
+    console.log("yo")
     evt.preventDefault();
     try {
       const formData = {...this.state};
