@@ -38,7 +38,7 @@ export default function NavBar({ user, setUser, collapsed, hasAccount, setHasAcc
         Cart
       </Menu.Item>
       <Menu.Item key="7" icon={<ExportOutlined  />}>
-        Sign out
+        <Link to="/" onClick={handleLogOut}>Sign out</Link>
       </Menu.Item>
       </>
       :
