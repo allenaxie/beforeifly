@@ -1,0 +1,12 @@
+.carousel {
+    width: 100vw;
+    background: #364d79
+}
+
+.carouselItem {
+    width: 100vw;
+    color: rgb(227, 40, 40);
+    line-height: 160px;
+    text-align: center;
+    background: #364d79;
+}
