@@ -1,3 +1,5 @@
+
+
 /* Search bar */
 .searchInput {
     margin-bottom: 15px;
@@ -5,19 +7,26 @@
 
 /* Carousel */
 .carousel {
-    width: 100vw;
+
     background: #364d79
 }
 
 .carouselItem {
-    width: 100vw;
+
     color: rgb(227, 40, 40);
     line-height: 160px;
     text-align: center;
     background: #364d79;
 }
+/* Featured Products */
+.fpContainer {
+    margin-top: 20px;
+}
+
 
 /* Browse items link */
 .browseLinkContainer {
     margin-top: 25px;
 }
+
+
