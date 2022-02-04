@@ -14,7 +14,7 @@ import {
   MenuFoldOutlined,
 } from '@ant-design/icons';
 
-function App() {
+export default function App() {
   const [user, setUser] = useState(getUser());
   const { Header, Sider, Content } = Layout;
   const { Title } = Typography;
@@ -56,19 +56,8 @@ function App() {
           </Content>
         </Layout>
       </Layout>
-
-
-      {/* <NavBar setUser={setUser} user={user}/> */}
-      {/* <AuthPage setUser={setUser} /> */}
-      {/* <>
-        
-      </> */}
-          
-        
-
-
     </main>
   );
 }
 
-export default App;
+

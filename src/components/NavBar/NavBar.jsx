@@ -9,7 +9,7 @@ import AuthPage from "../../pages/AuthPage/AuthPage";
 
 
 
-function NavBar({ user, setUser, collapsed, hasAccount, setHasAccount }) {
+export default function NavBar({ user, setUser, collapsed, hasAccount, setHasAccount }) {
 
 
   console.log(hasAccount, 'yuuhhh')
@@ -21,7 +21,7 @@ function NavBar({ user, setUser, collapsed, hasAccount, setHasAccount }) {
   }
 
   return (
-    <Menu theme="dark" mode="inline" inlineCollapsed={collapsed} defaultSelectedKeys={[1]}> 
+    <Menu theme="dark" mode="inline" defaultSelectedKeys={[1]}> 
       {
         user ?
       <>
@@ -53,20 +53,5 @@ function NavBar({ user, setUser, collapsed, hasAccount, setHasAccount }) {
       }
     </Menu>
   
-    
-
-
-
-    // <nav> 
-    //   <Link to="/orders">Order History</Link>
-    //   &nbsp; | &nbsp;
-    //   <Link to="/orders/new">New Order</Link>
-    //   &nbsp; | &nbsp;
-    //   <span>Welcome, {user.name}!</span>
-    //   &nbsp; | &nbsp;
-    //   <Link onClick={handleLogOut} to="">Log Out</Link>
-    // </nav>
   )
 }
-
-export default NavBar;
