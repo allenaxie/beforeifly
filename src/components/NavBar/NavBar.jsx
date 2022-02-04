@@ -25,17 +25,17 @@ export default function NavBar({ user, setUser, collapsed, hasAccount, setHasAcc
       {
         user ?
       <>
-      <Menu.Item key="4" icon={<ExportOutlined  />}>
-        Sign out
-      </Menu.Item>
-      <Menu.Item key="5" icon={<ShoppingOutlined />}>
+      <Menu.Item key="4" icon={<ShoppingOutlined />}>
         Browse products
       </Menu.Item>
-      <Menu.Item key="6" icon={<ProfileOutlined />}>
+      <Menu.Item key="5" icon={<ProfileOutlined />}>
         Order History
       </Menu.Item>
-      <Menu.Item key="7" icon={<ShoppingCartOutlined />}>
+      <Menu.Item key="6" icon={<ShoppingCartOutlined />}>
         Cart
+      </Menu.Item>
+      <Menu.Item key="7" icon={<ExportOutlined  />}>
+        Sign out
       </Menu.Item>
       </>
       :

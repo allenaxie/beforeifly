@@ -16,13 +16,8 @@ export default function HomePage() {
 
 
     return (
-
-
         <Layout className="siteLayout">
-
-
             <Content>
-
                 <Row>
                     <Col span={12} offset={6}>
                         <Search className="searchInput" placeholder="Search product name..." />
@@ -35,10 +30,10 @@ export default function HomePage() {
                                 <span className="carouselItem">hi hey </span>
                             </div>
                             <div>
-                                <span className="carouselItem">yo</span>
+                                <span className="carouselItem">yoooo</span>
                             </div>
                             <div>
-                                <span className="carouselItem">beeee</span>
+                                <span className="carouselItem">ayeeeee</span>
                             </div>
                         </Carousel>
                     </Col>
