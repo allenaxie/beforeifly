@@ -18,7 +18,7 @@ export default function LoginForm({ setUser }) {
   // }
 
   async function handleSubmit(values) {
-
+    console.log(values)
     // Prevent form from being submitted to the server
     // evt.preventDefault();
     try {
@@ -50,8 +50,9 @@ export default function LoginForm({ setUser }) {
       prefix={<UserOutlined className="site-form-item-icon" />} 
       placeholder="Email" 
       name="email" 
-      value={credentials.email} 
-      onChange={handleChange} />
+      // value={values.email} 
+      // onChange={handleChange} 
+      />
     </Form.Item>
     <Form.Item 
     name="password" 
@@ -59,9 +60,10 @@ export default function LoginForm({ setUser }) {
     >
       <Input 
       name="password" 
+      type="password"
       prefix={<LockOutlined className="site-form-item-icon" />} 
-      value={credentials.password} 
-      onChange={handleChange}
+      // value={values.password} 
+      // onChange={handleChange}
       placeholder="Password"
       />
     </Form.Item>
