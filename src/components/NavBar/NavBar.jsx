@@ -4,6 +4,7 @@ import * as userService from "../../utilities/users-service";
 import "antd/dist/antd.css"
 import "./NavBar.css"
 import {Layout, Menu} from "antd";
+import {HomeOutlined, UserAddOutlined, ShoppingCartOutlined, ShoppingOutlined, ImportOutlined, ExportOutlined, ProfileOutlined } from "@ant-design/icons"
 
 function NavBar({ user, setUser, collapsed }) {
 
@@ -16,25 +17,25 @@ function NavBar({ user, setUser, collapsed }) {
 
   return (
     <Menu theme="dark" mode="inline" inlineCollapsed={collapsed} defaultSelectedKeys={[1]}> 
-      <Menu.Item key="1" >
+      <Menu.Item key="1" icon={<HomeOutlined />}>
         Home
       </Menu.Item>
-      <Menu.Item key="2" >
+      <Menu.Item key="2" icon={<UserAddOutlined />}>
         Register
       </Menu.Item>
-      <Menu.Item key="3" >
+      <Menu.Item key="3" icon={< ImportOutlined/>}>
         Log In
       </Menu.Item>
-      <Menu.Item key="4" >
+      <Menu.Item key="4" icon={<ExportOutlined  />}>
         Sign out
       </Menu.Item>
-      <Menu.Item key="5" >
+      <Menu.Item key="5" icon={<ShoppingOutlined />}>
         Browse products
       </Menu.Item>
-      <Menu.Item key="6" >
+      <Menu.Item key="6" icon={<ProfileOutlined />}>
         Order History
       </Menu.Item>
-      <Menu.Item key="7" >
+      <Menu.Item key="7" icon={<ShoppingCartOutlined />}>
         Cart
       </Menu.Item>
     </Menu>
