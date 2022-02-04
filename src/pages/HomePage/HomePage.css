@@ -1,7 +1,9 @@
+/* Search bar */
 .searchInput {
     margin-bottom: 15px;
 }
 
+/* Carousel */
 .carousel {
     width: 100vw;
     background: #364d79
@@ -15,3 +17,7 @@
     background: #364d79;
 }
 
+/* Browse items link */
+.browseLinkContainer {
+    margin-top: 25px;
+}
