@@ -5,9 +5,14 @@ import "antd/dist/antd.css"
 import "./NavBar.css"
 import {Layout, Menu} from "antd";
 import {HomeOutlined, UserAddOutlined, ShoppingCartOutlined, ShoppingOutlined, ImportOutlined, ExportOutlined, ProfileOutlined } from "@ant-design/icons"
+import AuthPage from "../../pages/AuthPage/AuthPage";
 
-function NavBar({ user, setUser, collapsed }) {
 
+
+function NavBar({ user, setUser, collapsed, hasAccount, setHasAccount }) {
+
+
+  console.log(hasAccount, 'yuuhhh')
   const {Sider} = Layout;
 
   function handleLogOut() {
@@ -17,15 +22,9 @@ function NavBar({ user, setUser, collapsed }) {
 
   return (
     <Menu theme="dark" mode="inline" inlineCollapsed={collapsed} defaultSelectedKeys={[1]}> 
-      <Menu.Item key="1" icon={<HomeOutlined />}>
-        Home
-      </Menu.Item>
-      <Menu.Item key="2" icon={<UserAddOutlined />}>
-        Register
-      </Menu.Item>
-      <Menu.Item key="3" icon={< ImportOutlined/>}>
-        Log In
-      </Menu.Item>
+      {
+        user ?
+      <>
       <Menu.Item key="4" icon={<ExportOutlined  />}>
         Sign out
       </Menu.Item>
@@ -38,6 +37,20 @@ function NavBar({ user, setUser, collapsed }) {
       <Menu.Item key="7" icon={<ShoppingCartOutlined />}>
         Cart
       </Menu.Item>
+      </>
+      :
+      <>
+      <Menu.Item key="1" icon={<HomeOutlined />}>
+        <Link to="/">Home</Link>
+      </Menu.Item>
+      <Menu.Item key="2" icon={<UserAddOutlined />}>
+        <Link to="/users" onClick={() => setHasAccount(false)}>Register</Link>
+      </Menu.Item>
+      <Menu.Item key="3" icon={< ImportOutlined/>}>
+        <Link to="/users" onClick={() => setHasAccount(true)}>Log In</Link>
+      </Menu.Item>
+      </>
+      }
     </Menu>
   
     

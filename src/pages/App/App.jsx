@@ -19,6 +19,7 @@ function App() {
   const { Header, Sider, Content } = Layout;
   const { Title } = Typography;
   const [isCollapsed, setIsCollapsed ] = useState([]);
+  const [hasAccount, setHasAccount] = useState(true);
  
   function toggle () {
     setIsCollapsed(!isCollapsed);
@@ -33,7 +34,7 @@ function App() {
           collapsed={isCollapsed}
         >
           <div className="logo"></div>
-          <NavBar collapsed={isCollapsed} />
+          <NavBar collapsed={isCollapsed} hasAccount={hasAccount} setHasAccount={setHasAccount}/>
         </Sider>
         <Layout>
           <Header className="header">
@@ -46,7 +47,12 @@ function App() {
             </Button>
           </Header>
           <Content className="content">
-            <HomePage />
+            <Routes>
+            <Route path="/" element={<HomePage />}/>
+            <Route path="/orders/new" element={<NewOrderPage />} />
+            <Route path="/orders" element={<OrderHistoryPage />} />
+            <Route path="/users" element={<AuthPage hasAccount={hasAccount} setUser={setUser}/>}/>
+          </Routes>
           </Content>
         </Layout>
       </Layout>
@@ -56,12 +62,9 @@ function App() {
       {/* <AuthPage setUser={setUser} /> */}
       {/* <>
         
-          <Routes>
-            <Route path="/orders/new" element={<NewOrderPage />} />
-            <Route path="/orders" element={<OrderHistoryPage />} />
-          </Routes>
+      </> */}
+          
         
-        </> */}
 
 
     </main>

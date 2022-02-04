@@ -1,12 +1,19 @@
 import SignUpForm from "../../components/SignUpForm/SignUpForm";
 import LoginForm from "../../components/LoginForm/LoginForm";
+import {useState} from "react";
 
-function AuthPage({ setUser }) {
+function AuthPage({ setUser, hasAccount }) {
+
+ console.log(hasAccount)
+
   return (
     <main>
       <h1>AuthPage</h1>
-      <SignUpForm setUser={setUser} />
+      {hasAccount ?
       <LoginForm setUser={setUser} />
+      :
+      <SignUpForm setUser={setUser} />
+    }
     </main>
   )
 }
