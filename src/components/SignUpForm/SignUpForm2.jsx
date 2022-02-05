@@ -2,7 +2,7 @@ import { signUp } from "../../utilities/users-service";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Form, Input, Button, Typography } from "antd";
-import { UserOutlined, LockOutlined } from '@ant-design/icons';
+import { UserOutlined, LockOutlined, MailOutlined, HomeOutlined, PhoneOutlined } from '@ant-design/icons';
 
 export default function SignUpForm({ setUser }) {
 
@@ -67,7 +67,7 @@ export default function SignUpForm({ setUser }) {
                             required: true, message: 'Please enter your email address!' }]}
                     >
                         <Input
-                            prefix={<UserOutlined className="site-form-item-icon" />}
+                            prefix={ <MailOutlined className="site-form-item-icon" /> }
                             placeholder="Email"
                             name="email"
                         />
@@ -112,7 +112,7 @@ export default function SignUpForm({ setUser }) {
                         rules={[{ required: true, message: 'Please enter your address' }]}
                     >
                         <Input
-                            prefix={<UserOutlined className="site-form-item-icon" />}
+                            prefix={<HomeOutlined className="site-form-item-icon" />}
                             placeholder="Address"
                             name="address"
                         />
@@ -122,7 +122,7 @@ export default function SignUpForm({ setUser }) {
                         name="phone-number"
                     >
                         <Input
-                            prefix={<UserOutlined className="site-form-item-icon" />}
+                            prefix={<PhoneOutlined className="site-form-item-icon" />}
                             placeholder="Phone Number"
                             name="phone number"
                         />
