@@ -1,5 +1,6 @@
 import { Component } from "react";
 import { signUp } from "../../utilities/users-service";
+import {useNavigate} from "react-router-dom";
 
 class SignUpForm extends Component {
   state = {
@@ -12,6 +13,8 @@ class SignUpForm extends Component {
     error: ''
   }
 
+  
+
   handleChange = (evt) => {
     // The object passed to setState is merged with the current state object
     this.setState({
@@ -21,7 +24,6 @@ class SignUpForm extends Component {
   }
 
   handleSubmit = async (evt) => {
-    console.log("yo")
     evt.preventDefault();
     try {
       const formData = {...this.state};
@@ -30,6 +32,8 @@ class SignUpForm extends Component {
 
       const user = await signUp(formData);
       this.props.setUser(user);
+      const navigate = useNavigate();
+      navigate("/");
     } catch {
       // An error occurred...
       this.setState({error: 'Sign Up Failed - Try Again'});
@@ -50,6 +54,10 @@ class SignUpForm extends Component {
             <input type="password" name="password" value={this.state.password} onChange={this.handleChange} required />
             <label>Confirm</label>
             <input type="password" name="confirm" value={this.state.confirm} onChange={this.handleChange} required />
+            <label>Address</label>
+            <input type="text" name="address" value={this.state.address} onChange={this.handleChange} required />
+            <label>Phone Number</label>
+            <input type="text" name="phoneNumber" value={this.state.phoneNumber} onChange={this.handleChange} required />
             <button type="submit" disabled={disable}>SIGN UP</button>
           </form>
         </div>

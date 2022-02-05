@@ -17,15 +17,12 @@ import {
 export default function App() {
   const [user, setUser] = useState(getUser());
   const { Header, Sider, Content } = Layout;
-  const { Title } = Typography;
   const [isCollapsed, setIsCollapsed ] = useState([]);
   const [hasAccount, setHasAccount] = useState(true);
  
   function toggle () {
     setIsCollapsed(!isCollapsed);
   }
-
-  console.log('app-user',user)
 
   return (
     <main className="App">

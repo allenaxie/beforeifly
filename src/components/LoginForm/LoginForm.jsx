@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import * as usersService from '../../utilities/users-service';
-import {Form, Input, Button} from "antd";
+import { Form, Input, Button, Typography } from "antd";
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import "./LoginForm.css"
 
@@ -13,6 +13,7 @@ export default function LoginForm({ setUser }) {
   // });
   const [error, setError] = useState('');
   const navigate = useNavigate();
+  const { Title } = Typography;
 
   // function handleChange(evt) {
   //   setCredentials({ ...credentials, [evt.target.name]: evt.target.value });
@@ -20,7 +21,6 @@ export default function LoginForm({ setUser }) {
   // }
 
   async function handleSubmit(values) {
-    console.log('values',values)
     // Prevent form from being submitted to the server
     // evt.preventDefault();
     try {
@@ -29,75 +29,76 @@ export default function LoginForm({ setUser }) {
       // payload of the JSON Web Token (JWT)
       const user = await usersService.login(values);
       setUser(user);
-      console.log('loginForm',user)
-      navigate('/')
+      // Navigate user to home page
+      navigate('/');
     } catch {
       setError('Log In Failed - Try Again');
     }
   }
 
- 
+
 
   return (
- <div>
-<div className="form-container" >
-  <Form 
-  name="normal_login"
-  className="login-form"
-  autoComplete="off"
-  initialValues={{ remember:true}}
-  onFinish={handleSubmit}
-  >
-    <Form.Item 
-    name="email" 
-    rules={[{required: true, message: 'Please enter your email address!'}]}
-    >
-      <Input 
-      prefix={<UserOutlined className="site-form-item-icon" />} 
-      placeholder="Email" 
-      name="email" 
-      // value={values.email} 
-      // onChange={handleChange} 
-      />
-    </Form.Item>
-    <Form.Item 
-    name="password" 
-    rules={[{required: true, message: 'Please enter your password!'}]}
-    >
-      <Input 
-      name="password" 
-      type="password"
-      prefix={<LockOutlined className="site-form-item-icon" />} 
-      // value={values.password} 
-      // onChange={handleChange}
-      placeholder="Password"
-      />
-    </Form.Item>
-    <Form.Item>
-      <Button htmlType="submit" type="primary" className="login-form-button">LOG IN</Button>
-    </Form.Item>
-  </Form>
-</div>
-<p className="error-message">&nbsp;{error}</p>
-</div> 
-  
-
-
-  //   <div>
-  //   <div className="form-container" onSubmit={handleSubmit}>
-  //     <form autoComplete="off" >
-  //       <label>Email</label>
-  //       <input type="text" name="email" value={credentials.email} onChange={handleChange} required />
-  //       <label>Password</label>
-  //       <input type="password" name="password" value={credentials.password} onChange={handleChange} required />
-  //       <button type="submit">LOG IN</button>
-  //     </form>
-  //   </div>
-  //   <p className="error-message">&nbsp;{error}</p>
-  // </div>
-
-  )}
+    <div>
+      <Title level={2}>Log In</Title>
+      <div className="form-container" >
+        <Form
+          name="normal_login"
+          className="login-form"
+          autoComplete="off"
+          initialValues={{ remember: true }}
+          onFinish={handleSubmit}
+        >
+          <Form.Item
+            name="email"
+            rules={[{ required: true, message: 'Please enter your email address!' }]}
+          >
+            <Input
+              prefix={<UserOutlined className="site-form-item-icon" />}
+              placeholder="Email"
+              name="email"
+            // value={values.email} 
+            // onChange={handleChange} 
+            />
+          </Form.Item>
+          <Form.Item
+            name="password"
+            rules={[{ required: true, message: 'Please enter your password!' }]}
+          >
+            <Input
+              name="password"
+              type="password"
+              prefix={<LockOutlined className="site-form-item-icon" />}
+              // value={values.password} 
+              // onChange={handleChange}
+              placeholder="Password"
+            />
+          </Form.Item>
+          <Form.Item>
+            <Button htmlType="submit" type="primary" className="login-form-button">LOG IN</Button>
+          </Form.Item>
+        </Form>
+      </div>
+      <p className="error-message">&nbsp;{error}</p>
+    </div>
 
 
 
-  
+    //   <div>
+    //   <div className="form-container" onSubmit={handleSubmit}>
+    //     <form autoComplete="off" >
+    //       <label>Email</label>
+    //       <input type="text" name="email" value={credentials.email} onChange={handleChange} required />
+    //       <label>Password</label>
+    //       <input type="password" name="password" value={credentials.password} onChange={handleChange} required />
+    //       <button type="submit">LOG IN</button>
+    //     </form>
+    //   </div>
+    //   <p className="error-message">&nbsp;{error}</p>
+    // </div>
+
+  )
+}
+
+
+

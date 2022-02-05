@@ -1,19 +1,16 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
 import * as userService from "../../utilities/users-service";
 import "antd/dist/antd.css"
 import "./NavBar.css"
-import {Layout, Menu} from "antd";
+import { Menu} from "antd";
 import {HomeOutlined, UserAddOutlined, ShoppingCartOutlined, ShoppingOutlined, ImportOutlined, ExportOutlined, ProfileOutlined } from "@ant-design/icons"
 import AuthPage from "../../pages/AuthPage/AuthPage";
 
 
 
-export default function NavBar({ user, setUser, collapsed, hasAccount, setHasAccount }) {
+export default function NavBar({ user, setUser,setHasAccount }) {
 
-  console.log('navbar',user)
 
-  const {Sider} = Layout;
 
   function handleLogOut() {
     userService.logOut();
