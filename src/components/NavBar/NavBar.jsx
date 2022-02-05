@@ -10,8 +10,6 @@ import AuthPage from "../../pages/AuthPage/AuthPage";
 
 export default function NavBar({ user, setUser,setHasAccount }) {
 
-
-
   function handleLogOut() {
     userService.logOut();
     setUser(null);
@@ -26,7 +24,9 @@ export default function NavBar({ user, setUser,setHasAccount }) {
         user ?
       <>
       <Menu.Item key="4" icon={<ShoppingOutlined />}>
-        Browse products
+        <Link to="/products">
+          Browse products
+        </Link>
       </Menu.Item>
       <Menu.Item key="5" icon={<ProfileOutlined />}>
         Order History

@@ -2,7 +2,7 @@ import './App.css';
 import { useState } from "react";
 import { getUser } from "../../utilities/users-service";
 import { Routes, Route } from "react-router-dom";
-import NewOrderPage from "../NewOrderPage/NewOrderPage";
+import ProductsIndexPage from "../ProductsIndexPage/ProductsIndexPage";
 import AuthPage from "../AuthPage/AuthPage";
 import OrderHistoryPage from "../OrderHistoryPage/OrderHistoryPage";
 import NavBar from "../../components/NavBar/NavBar";
@@ -48,7 +48,7 @@ export default function App() {
           <Content className="content">
             <Routes>
             <Route path="/" element={<HomePage />}/>
-            <Route path="/orders/new" element={<NewOrderPage />} />
+            <Route path="/products" element={<ProductsIndexPage />} />
             <Route path="/orders" element={<OrderHistoryPage />} />
             <Route path="/users" element={<AuthPage hasAccount={hasAccount} setUser={setUser}/>}/>
           </Routes>
