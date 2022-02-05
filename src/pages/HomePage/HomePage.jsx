@@ -5,7 +5,9 @@ import "./HomePage.css";
 import { Row, Col, Carousel, Input, Card, Typography, Layout, Menu, Button } from 'antd';
 
 
-export default function HomePage() {
+export default function HomePage({ productItems }) {
+
+
 
     const { Search } = Input
     const { Meta } = Card;
@@ -13,27 +15,27 @@ export default function HomePage() {
     const { Header, Sider, Content } = Layout;
 
 
-
-
     return (
         <Layout className="siteLayout">
             <Content>
                 <Row>
-                    <Col>
+                    <Col span={10} offset={7}>
                         <Search className="searchInput" placeholder="Search product name..." />
                     </Col>
                 </Row>
                 <Row>
                     <Col>
-                        <Carousel autoplay className="carousel">
-                            <div>
-                                <span className="carouselItem">hi hey </span>
+                        <Carousel className="carousel">
+                            <Row className="carouselItem1">
+                                <Col span={12} offset={6}>
+                                    <img className="banner" src="images/logo-banner.png"></img>
+                                </Col>
+                            </Row>
+                            <div className="carouselItem2">
+                                <div >yo</div>
                             </div>
-                            <div>
-                                <span className="carouselItem">yoooo</span>
-                            </div>
-                            <div>
-                                <span className="carouselItem">ayeeeee</span>
+                            <div className="carouselItem3">
+                                <div >de</div>
                             </div>
                         </Carousel>
                     </Col>
@@ -44,57 +46,135 @@ export default function HomePage() {
                     </Col>
                 </Row>
                 <Row className="productsContainer" gutter={[16, 16]}>
-                    <Col span={12}>
+                    <Col span={8} offset={2}>
                         <Card
-                            hoverable>
+                            className="pi-card"
+                            hoverable
+                            cover={
+                                <Row>
+                                    <Col span={16} offset={3}>
+                                        <img
+                                            alt="product-image"
+                                        // src={productItems[0].imageURL}
+                                        />
+                                    </Col>
+
+                                </Row>
+                            }
+                        >
                             <Meta
-                                title="Product Title"
-                                description="description will go here"
+                            // title={productItems[0].name}
+                            // description = {productItems[0].description}
                             />
                         </Card>
                     </Col>
-                    <Col span={12}>
+                    <Col span={8} offset={2}>
                         <Card
-                            hoverable>
+                            className="pi-card"
+                            hoverable
+                            cover={
+                                <Row>
+                                    <Col span={16} offset={3}>
+                                        <img
+                                            alt="product-image"
+                                        // src={productItems[0].imageURL}
+                                        />
+                                    </Col>
+
+                                </Row>
+                            }
+                        >
                             <Meta
-                                title="Product Title"
-                                description="description will go here"
+                            // title={productItems[0].name}
+                            // description = {productItems[0].description}
                             />
                         </Card>
                     </Col>
-                    <Col span={12}>
+                    <Col span={8} offset={2}>
                         <Card
-                            hoverable>
+                            className="pi-card"
+                            hoverable
+                            cover={
+                                <Row>
+                                    <Col span={16} offset={3}>
+                                        <img
+                                            alt="product-image"
+                                        // src={productItems[0].imageURL}
+                                        />
+                                    </Col>
+
+                                </Row>
+                            }
+                        >
                             <Meta
-                                title="Product Title"
-                                description="description will go here"
+                            // title={productItems[0].name}
+                            // description = {productItems[0].description}
                             />
                         </Card>
                     </Col>
-                    <Col span={12}>
+                    <Col span={8} offset={2}>
                         <Card
-                            hoverable>
+                            className="pi-card"
+                            hoverable
+                            cover={
+                                <Row>
+                                    <Col span={16} offset={3}>
+                                        <img
+                                            alt="product-image"
+                                        // src={productItems[0].imageURL}
+                                        />
+                                    </Col>
+
+                                </Row>
+                            }
+                        >
                             <Meta
-                                title="Product Title"
-                                description="description will go here"
+                            // title={productItems[0].name}
+                            // description = {productItems[0].description}
                             />
                         </Card>
                     </Col>
-                    <Col span={12}>
+                    <Col span={8} offset={2}>
                         <Card
-                            hoverable>
+                            className="pi-card"
+                            hoverable
+                            cover={
+                                <Row>
+                                    <Col span={16} offset={3}>
+                                        <img
+                                            alt="product-image"
+                                        // src={productItems[0].imageURL}
+                                        />
+                                    </Col>
+
+                                </Row>
+                            }
+                        >
                             <Meta
-                                title="Product Title"
-                                description="description will go here"
+                            // title={productItems[0].name}
+                            // description = {productItems[0].description}
                             />
                         </Card>
                     </Col>
-                    <Col span={12}>
+                    <Col span={8} offset={2}>
                         <Card
-                            hoverable>
+                            className="pi-card"
+                            hoverable
+                            cover={
+                                <Row>
+                                    <Col span={16} offset={3}>
+                                        <img
+                                            alt="product-image"
+                                        // src={productItems[0].imageURL}
+                                        />
+                                    </Col>
+
+                                </Row>
+                            }
+                        >
                             <Meta
-                                title="Product Title"
-                                description="description will go here"
+                            // title={productItems[0].name}
+                            // description = {productItems[0].description}
                             />
                         </Card>
                     </Col>

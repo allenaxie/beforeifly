@@ -7,17 +7,15 @@
 
 /* Carousel */
 .carousel {
-
-    background: #364d79
+    height: 50vh;
+    background: linear-gradient(to right,#c1cff2 -50%, #f4f4f7 130%);
 }
 
-.carouselItem {
-
-    color: rgb(227, 40, 40);
-    line-height: 160px;
-    text-align: center;
-    background: #364d79;
+.banner {
+    width: 20rem !important;
+    /* margin-left: 5rem !important; */
 }
+
 /* Featured Products */
 .fpContainer {
     margin-top: 20px;

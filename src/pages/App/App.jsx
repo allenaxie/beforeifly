@@ -1,11 +1,13 @@
 import './App.css';
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { getUser } from "../../utilities/users-service";
 import { Routes, Route } from "react-router-dom";
 import ProductsIndexPage from "../ProductsIndexPage/ProductsIndexPage";
 import AuthPage from "../AuthPage/AuthPage";
 import OrderHistoryPage from "../OrderHistoryPage/OrderHistoryPage";
 import NavBar from "../../components/NavBar/NavBar";
+import ProductItem from "../../components/ProductItem/ProductItem";
+import * as productsAPI from "../../utilities/products-api";
 import HomePage from "../HomePage/HomePage";
 import { Layout, Typography, Menu, Button, Row, Col } from "antd";
 import 'antd/dist/antd.css';
@@ -19,10 +21,29 @@ export default function App() {
   const { Header, Sider, Content } = Layout;
   const [isCollapsed, setIsCollapsed ] = useState([]);
   const [hasAccount, setHasAccount] = useState(true);
+  const [productItems, setProductItems] = useState([]);
+  const categoriesRef = useRef([])
+  const [activeCateg, setActiveCateg] = useState('');
  
   function toggle () {
     setIsCollapsed(!isCollapsed);
   }
+
+  useEffect(function () {
+    async function getProducts() {
+      const products = await productsAPI.getAll();
+      categoriesRef.current = products.reduce((acc, product) => {
+        const cat = product.category.name;
+        return acc.includes(cat) ? acc : [...acc, cat]
+      }, []);
+      setProductItems(products)
+      setActiveCateg(products[0].category.name);
+    }
+    getProducts();
+  }, [])
+
+
+  
 
   return (
     <main className="App">
@@ -47,8 +68,8 @@ export default function App() {
           </Header>
           <Content className="content">
             <Routes>
-            <Route path="/" element={<HomePage />}/>
-            <Route path="/products" element={<ProductsIndexPage user={user}/>} />
+            <Route path="/" element={<HomePage productItems={productItems}/>}/>
+            <Route path="/products" element={<ProductsIndexPage productItems={productItems} user={user}/>} />
             <Route path="/orders" element={<OrderHistoryPage />} />
             <Route path="/users" element={<AuthPage hasAccount={hasAccount} setUser={setUser}/>}/>
           </Routes>
