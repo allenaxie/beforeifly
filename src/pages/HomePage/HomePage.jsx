@@ -19,7 +19,7 @@ export default function HomePage() {
         <Layout className="siteLayout">
             <Content>
                 <Row>
-                    <Col span={12} offset={6}>
+                    <Col>
                         <Search className="searchInput" placeholder="Search product name..." />
                     </Col>
                 </Row>

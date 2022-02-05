@@ -7,7 +7,7 @@ import AuthPage from "../AuthPage/AuthPage";
 import OrderHistoryPage from "../OrderHistoryPage/OrderHistoryPage";
 import NavBar from "../../components/NavBar/NavBar";
 import HomePage from "../HomePage/HomePage";
-import { Layout, Typography, Menu, Button } from "antd";
+import { Layout, Typography, Menu, Button, Row, Col } from "antd";
 import 'antd/dist/antd.css';
 import {
   MenuUnfoldOutlined,
@@ -35,7 +35,7 @@ export default function App() {
           <div className="logo"></div>
           <NavBar collapsed={isCollapsed} user={user} hasAccount={hasAccount} setHasAccount={setHasAccount}/>
         </Sider>
-        <Layout>
+        <Layout className="main">
           <Header className="header">
             <Button
               type="primary"
@@ -48,7 +48,7 @@ export default function App() {
           <Content className="content">
             <Routes>
             <Route path="/" element={<HomePage />}/>
-            <Route path="/products" element={<ProductsIndexPage />} />
+            <Route path="/products" element={<ProductsIndexPage user={user}/>} />
             <Route path="/orders" element={<OrderHistoryPage />} />
             <Route path="/users" element={<AuthPage hasAccount={hasAccount} setUser={setUser}/>}/>
           </Routes>

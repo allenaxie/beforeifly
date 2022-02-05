@@ -1,15 +1,17 @@
-import { useState, useEffect, useRef} from "react";
+import { useState, useEffect, useRef } from "react";
 import * as productsAPI from "../../utilities/products-api";
-import { Layout } from "antd";
+import { Layout, Row, Col, Card } from "antd";
 import 'antd/dist/antd.css';
+import ProductItem from "../../components/ProductItem/ProductItem";
 
 
 export default function ProductsIndexPage() {
-  
+
   const [productItems, setProductItems] = useState([]);
   const [activeCateg, setActiveCateg] = useState('');
   const categoriesRef = useRef([])
   const { Header, Sider, Content } = Layout;
+  const { Meta } = Card
 
   useEffect(function () {
     async function getProducts() {
@@ -24,10 +26,19 @@ export default function ProductsIndexPage() {
     getProducts();
   }, [])
 
+
+  const products = productItems.map(p => 
+  <ProductItem 
+  key={p._id} 
+  product={p}
+  />)
+
   return (
     <Layout>
       <Content>
-      <h1>ProductsIndexPage</h1>
+        <Row className="productsContainer" gutter={[16, 16]}>
+          {products}
+        </Row>
 
       </Content>
 
