@@ -5,12 +5,29 @@ import 'antd/dist/antd.css';
 import ProductItem from "../../components/ProductItem/ProductItem";
 
 
-export default function ProductsIndexPage({productItems}) {
+export default function ProductsIndexPage({productItems ,setProductItems}) {
 
   const { Header, Sider, Content } = Layout;
   const { Meta } = Card
+  const categoriesRef = useRef([])
+  const [activeCateg, setActiveCateg] = useState('');
 
-  const product = productItems.map(p => 
+  useEffect(function () {
+    async function getProducts() {
+      const products = await productsAPI.getAll();
+      categoriesRef.current = products.reduce((acc, product) => {
+        const cat = product.category.name;
+        return acc.includes(cat) ? acc : [...acc, cat]
+      }, []);
+      setProductItems(products)
+      setActiveCateg(products[0].category.name);
+    }
+    getProducts();
+  }, [])
+
+  console.log('pIndexPage', productItems)
+
+  const products = productItems.map(p => 
     <ProductItem 
     key={p._id} 
     product={p}
@@ -20,7 +37,7 @@ export default function ProductsIndexPage({productItems}) {
     <Layout>
       <Content>
         <Row className="productsContainer" gutter={[16, 16]}>
-          {product}
+          {products}
         </Row>
 
       </Content>

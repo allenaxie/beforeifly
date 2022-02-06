@@ -29,21 +29,7 @@ export default function App() {
     setIsCollapsed(!isCollapsed);
   }
 
-  useEffect(function () {
-    async function getProducts() {
-      const products = await productsAPI.getAll();
-      categoriesRef.current = products.reduce((acc, product) => {
-        const cat = product.category.name;
-        return acc.includes(cat) ? acc : [...acc, cat]
-      }, []);
-      setProductItems(products)
-      setActiveCateg(products[0].category.name);
-    }
-    getProducts();
-  }, [])
 
-
-  
 
   return (
     <main className="App">
@@ -68,8 +54,8 @@ export default function App() {
           </Header>
           <Content className="content">
             <Routes>
-            <Route path="/" element={<HomePage productItems={productItems}/>}/>
-            <Route path="/products" element={<ProductsIndexPage productItems={productItems} user={user}/>} />
+            <Route path="/" element={<HomePage productItems={productItems} setProductItems={setProductItems} />}/>
+            <Route path="/products" element={<ProductsIndexPage productItems={productItems} setProductItems={setProductItems} user={user}/>} />
             <Route path="/orders" element={<OrderHistoryPage />} />
             <Route path="/users" element={<AuthPage hasAccount={hasAccount} setUser={setUser}/>}/>
           </Routes>

@@ -8,3 +8,9 @@ img {
     flex-direction: column;
     justify-content: center;
 }
+
+.ant-card-actions > li > span{
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}

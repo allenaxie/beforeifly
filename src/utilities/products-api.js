@@ -7,3 +7,8 @@ export function getAll() {
     return sendRequest(BASE_URL);
 }
 
+export function getFeat() {
+    console.log('pAPI')
+    return sendRequest(`${BASE_URL}/featured`);
+}
+

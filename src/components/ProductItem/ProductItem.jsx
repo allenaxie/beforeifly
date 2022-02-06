@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
-import { Layout, Row, Col, Card } from "antd";
+import { Layout, Row, Col, Card, Button } from "antd";
 import 'antd/dist/antd.css';
-import "./ProductItem.css"
+import "./ProductItem.css";
+import { ShoppingCartOutlined } from "@ant-design/icons";
 
 export default function ProductItem({product}) {
 
@@ -24,6 +25,12 @@ export default function ProductItem({product}) {
 
                     </Row>
                 }
+                actions = {[
+                    <>
+                        <Button>Add To Cart <ShoppingCartOutlined key="cart" /></Button>
+                        
+                    </>
+                ]}
             >
                 <Meta
                     title={product.name}
