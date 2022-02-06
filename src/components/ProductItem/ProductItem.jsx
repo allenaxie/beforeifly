@@ -7,7 +7,11 @@ import { ShoppingCartOutlined } from "@ant-design/icons";
 export default function ProductItem({product}) {
 
     const { Meta } = Card
-    console.log(product)
+
+
+    function addToCart (values) {
+        console.log(values)
+    }
 
     return (
         <Col span={8} offset={2}>
@@ -27,7 +31,7 @@ export default function ProductItem({product}) {
                 }
                 actions = {[
                     <>
-                        <Button>Add To Cart <ShoppingCartOutlined key="cart" /></Button>
+                        <Button onClick={addToCart} icon={<ShoppingCartOutlined key="cart" />}>Add To Cart </Button>
                         
                     </>
                 ]}
