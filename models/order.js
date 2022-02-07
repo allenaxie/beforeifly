@@ -50,11 +50,28 @@ orderSchema.statics.getCart = function (userId) {
     return this.findOneAndUpdate (
         // query 
         { user: userId, isPaid: false},
-        // update - in the case the order (cart) is upserted
+        // update - in case the order (cart) is upserted
         { user: userId },
         // upsert option creates the doc if it doesn't already exist
         { upsert: true, new: true}
     );
 };
+
+orderSchema.methods.addProductToCart = async function(productId) {
+    // 'this' refers to the 'cart' (unpaid order)
+    const cart = this;
+    const lineProduct = cart.lineProducts.find(lineProduct => lineProduct.item._id.equals(productId));
+    if (lineProduct) {
+        // if the item is already in the cart, increase the qty
+        lineProduct.qty +=1;
+    } else {
+        // Not in cart, add the item!
+        const product = await mongoose.model('Product').findById(productId);
+        cart.lineProducts.push({ product });
+    }
+    return cart.save();
+}
+
+
 
 module.exports = mongoose.model('Order', orderSchema);

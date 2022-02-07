@@ -58,12 +58,12 @@ export default function App() {
           </Header>
           <Content className="content">
             <Routes>
-            <Route path="/" element={<HomePage productItems={productItems} setProductItems={setProductItems} />}/>
-            <Route path="/products" element={<ProductsIndexPage productItems={productItems} setProductItems={setProductItems} user={user} cart={cart} setCart={setCart}/>} />
-            <Route path="/orders" element={<OrderHistoryPage />} />
-            <Route path="/orders/cart" element={<NewOrderPage cart={cart} setCart={setCart} />} />
-            <Route path="/users" element={<AuthPage hasAccount={hasAccount} setUser={setUser}/>}/>
-          </Routes>
+              <Route path="/" element={<HomePage productItems={productItems} setProductItems={setProductItems} cart={cart} setCart={setCart}/>}/>
+              <Route path="/products" element={<ProductsIndexPage productItems={productItems} setProductItems={setProductItems} user={user} cart={cart} setCart={setCart}/>} />
+              <Route path="/orders" element={<OrderHistoryPage />} />
+              <Route path="/orders/cart" element={<NewOrderPage cart={cart} setCart={setCart} />} />
+              <Route path="/users" element={<AuthPage hasAccount={hasAccount} setUser={setUser}/>}/>
+            </Routes>
           </Content>
         </Layout>
       </Layout>

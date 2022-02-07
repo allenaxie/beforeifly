@@ -7,7 +7,7 @@ export default function OrderDetail ({cart, setCart}) {
     const { Meta } = Card;
     const { Header, Content } = Layout;
 
-    // console.log('orderdetail cart',cart)
+    console.log('orderdetail cart',cart)
 
     return (
         <>

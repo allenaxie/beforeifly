@@ -12,7 +12,7 @@ async function index (req, res) {
 }
 
 async function getFeat(req, res) {
+    // find products less than $200
     const products = await Product.find({price: {$lt: 200} })
     res.json(products)
-    console.log(products)
 }
