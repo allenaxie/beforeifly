@@ -1,3 +1,6 @@
+import { Row, Col, Card, Button } from "antd";
+
+
 export default function LineProduct ({lineProduct}) {
     return (
         <>

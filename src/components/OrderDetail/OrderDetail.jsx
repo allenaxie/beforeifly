@@ -23,8 +23,12 @@ export default function OrderDetail ({cart, setCart}) {
     />)
 
     return (
-        <>
-            {lineProducts}
-        </>
+        <Layout>
+            <Row>
+                <Col span={12} offset={6}>
+                    {lineProducts}
+                </Col>
+            </Row>
+        </Layout>
     )
 }
