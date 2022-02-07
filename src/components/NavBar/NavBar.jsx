@@ -32,7 +32,7 @@ export default function NavBar({ user, setUser,setHasAccount }) {
         Order History
       </Menu.Item>
       <Menu.Item key="6" icon={<ShoppingCartOutlined />}>
-        Cart
+        <Link to="/orders/cart">Cart</Link>
       </Menu.Item>
       <Menu.Item key="7" icon={<ExportOutlined  />}>
         <Link to="/" onClick={handleLogOut}>Sign out</Link>

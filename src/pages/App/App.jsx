@@ -9,6 +9,7 @@ import NavBar from "../../components/NavBar/NavBar";
 import ProductItem from "../../components/ProductItem/ProductItem";
 import * as productsAPI from "../../utilities/products-api";
 import HomePage from "../HomePage/HomePage";
+import NewOrderPage from "../NewOrderPage/NewOrderPage";
 import { Layout, Typography, Menu, Button, Row, Col } from "antd";
 import 'antd/dist/antd.css';
 import {
@@ -57,6 +58,7 @@ export default function App() {
             <Route path="/" element={<HomePage productItems={productItems} setProductItems={setProductItems} />}/>
             <Route path="/products" element={<ProductsIndexPage productItems={productItems} setProductItems={setProductItems} user={user}/>} />
             <Route path="/orders" element={<OrderHistoryPage />} />
+            <Route path="/orders/cart" element={<NewOrderPage />} />
             <Route path="/users" element={<AuthPage hasAccount={hasAccount} setUser={setUser}/>}/>
           </Routes>
           </Content>
