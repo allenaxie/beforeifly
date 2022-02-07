@@ -11,6 +11,7 @@ export default function ProductItem({product, cart, setCart}) {
 
 
     async function handleAddToOrder (productId) {
+        console.log('productItem - productId',productId)
         const cart = await ordersAPI.addProductToCart(productId);
         setCart(cart);
     }
@@ -33,7 +34,7 @@ export default function ProductItem({product, cart, setCart}) {
                 }
                 actions = {[
                     <>
-                        <Button onClick={handleAddToOrder} icon={<ShoppingCartOutlined key="cart" />}>Add To Cart </Button>
+                        <Button onClick={()=>handleAddToOrder(product._id)} icon={<ShoppingCartOutlined key="cart" />}>Add To Cart </Button>
                     </>
                 ]}
             >

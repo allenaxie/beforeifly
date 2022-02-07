@@ -20,11 +20,11 @@ export default function NewOrderPage ({cart, setCart}) {
         getCart();
     }, [])
 
-    console.log('neworder cart',cart)
+    // console.log('neworder cart',cart)
 
     return  (
         <>
-            <OrderDetail/>
+            <OrderDetail cart={cart} setCart={setCart}/>
         </>
     )
 }

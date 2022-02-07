@@ -15,7 +15,6 @@ export default function NavBar({ user, setUser,setHasAccount }) {
     setUser(null);
   }
 
-
   return (
     <Menu theme="dark" mode="inline" defaultSelectedKeys={[1]}> 
      <Menu.Item key="1" icon={<HomeOutlined />}>
@@ -30,7 +29,7 @@ export default function NavBar({ user, setUser,setHasAccount }) {
         </Link>
       </Menu.Item>
       <Menu.Item key="5" icon={<ProfileOutlined />}>
-        Order History
+        <Link to="/orders">Order History</Link>
       </Menu.Item>
       <Menu.Item key="6" icon={<ShoppingCartOutlined />}>
         <Link to="/orders/cart">Cart</Link>

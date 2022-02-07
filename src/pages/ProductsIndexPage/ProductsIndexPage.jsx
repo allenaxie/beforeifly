@@ -10,7 +10,7 @@ export default function ProductsIndexPage({productItems ,setProductItems, user, 
   const { Header, Sider, Content } = Layout;
   const { Meta } = Card
   const categoriesRef = useRef([])
-  const [activeCateg, setActiveCateg] = useState('');
+  // const [activeCateg, setActiveCateg] = useState('');
 
   useEffect(function () {
     async function getProducts() {
@@ -20,7 +20,7 @@ export default function ProductsIndexPage({productItems ,setProductItems, user, 
         return acc.includes(cat) ? acc : [...acc, cat]
       }, []);
       setProductItems(products)
-      setActiveCateg(products[0].category.name);
+      // setActiveCateg(products[0].category.name);
     }
     getProducts();
   }, [])
