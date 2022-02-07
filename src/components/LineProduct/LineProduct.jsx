@@ -1,7 +1,8 @@
-export default function LineProduct ({}) {
+export default function LineProduct ({lineProduct}) {
     return (
         <>
-        ayo
+        {lineProduct.product.name}
+        {lineProduct.product.description}
         </>
     )
 }
