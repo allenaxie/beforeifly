@@ -35,7 +35,5 @@ const Product = require('./models/product');
     
     ])
 
-    console.log(products);
-
     process.exit();
 })();

@@ -3,15 +3,18 @@ import { Layout, Row, Col, Card, Button } from "antd";
 import 'antd/dist/antd.css';
 import "./ProductItem.css";
 import { ShoppingCartOutlined } from "@ant-design/icons";
+import * as ordersAPI from "../../utilities/orders-api";
 
-export default function ProductItem({product}) {
+export default function ProductItem({product, cart, setCart}) {
 
     const { Meta } = Card
 
 
-    function addToCart (values) {
-        console.log(values)
+    async function handleAddToOrder (productId) {
+        const cart = await ordersAPI.addProductToCart(productId);
+        setCart(cart);
     }
+  
 
     return (
         <Col span={8} offset={2}>
@@ -26,13 +29,11 @@ export default function ProductItem({product}) {
                             src={product.imageURL}
                         />
                         </Col>
-
                     </Row>
                 }
                 actions = {[
                     <>
-                        <Button onClick={addToCart} icon={<ShoppingCartOutlined key="cart" />}>Add To Cart </Button>
-                        
+                        <Button onClick={handleAddToOrder} icon={<ShoppingCartOutlined key="cart" />}>Add To Cart </Button>
                     </>
                 ]}
             >

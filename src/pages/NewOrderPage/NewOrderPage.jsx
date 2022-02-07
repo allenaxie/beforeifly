@@ -4,14 +4,13 @@ import { Row, Col, Card, Typography, Layout, Menu, Button } from 'antd';
 import 'antd/dist/antd.css';
 import "./NewOrderPage.css";
 import * as ordersAPI from "../../utilities/orders-api";
+import OrderDetail from "../../components/OrderDetail/OrderDetail";
 
-export default function NewOrderPage () {
+export default function NewOrderPage ({cart, setCart}) {
 
     const { Meta } = Card;
     const { Title } = Typography;
     const { Header, Sider, Content } = Layout;
-
-    const [cart, setCart] = useState(null)
 
     useEffect (function () {
         async function getCart() {
@@ -21,11 +20,11 @@ export default function NewOrderPage () {
         getCart();
     }, [])
 
-    console.log(cart)
+    console.log('neworder cart',cart)
 
     return  (
         <>
-        ya
+            <OrderDetail/>
         </>
     )
 }

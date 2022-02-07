@@ -25,12 +25,15 @@ export default function App() {
   const [productItems, setProductItems] = useState([]);
   const categoriesRef = useRef([])
   const [activeCateg, setActiveCateg] = useState('');
+  const [cart, setCart] = useState(null)
  
   function toggle () {
     setIsCollapsed(!isCollapsed);
   }
 
+  
 
+  // console.log('app-cart', cart)
 
   return (
     <main className="App">
@@ -41,7 +44,7 @@ export default function App() {
           collapsed={isCollapsed}
         >
           <div className="logo"></div>
-          <NavBar collapsed={isCollapsed} user={user} hasAccount={hasAccount} setHasAccount={setHasAccount}/>
+          <NavBar user={user} setUser={setUser} setHasAccount={setHasAccount}/>
         </Sider>
         <Layout className="main">
           <Header className="header">
@@ -56,9 +59,9 @@ export default function App() {
           <Content className="content">
             <Routes>
             <Route path="/" element={<HomePage productItems={productItems} setProductItems={setProductItems} />}/>
-            <Route path="/products" element={<ProductsIndexPage productItems={productItems} setProductItems={setProductItems} user={user}/>} />
+            <Route path="/products" element={<ProductsIndexPage productItems={productItems} setProductItems={setProductItems} user={user} cart={cart} setCart={setCart}/>} />
             <Route path="/orders" element={<OrderHistoryPage />} />
-            <Route path="/orders/cart" element={<NewOrderPage />} />
+            <Route path="/orders/cart" element={<NewOrderPage cart={cart} setCart={setCart} />} />
             <Route path="/users" element={<AuthPage hasAccount={hasAccount} setUser={setUser}/>}/>
           </Routes>
           </Content>

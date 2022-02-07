@@ -2,7 +2,7 @@ import LoginForm from "../../components/LoginForm/LoginForm";
 import {useState} from "react";
 import 'antd/dist/antd.css';
 
-import SignUpForm2 from "../../components/SignUpForm/SignUpForm2";
+import SignUpForm from "../../components/SignUpForm/SignUpForm";
 
 function AuthPage({ setUser, hasAccount }) {
 
@@ -12,7 +12,7 @@ function AuthPage({ setUser, hasAccount }) {
       <LoginForm setUser={setUser} />
       :
       <>
-      <SignUpForm2 setUser={setUser} />
+      <SignUpForm setUser={setUser} />
       </>
     }
     </main>

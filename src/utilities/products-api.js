@@ -8,7 +8,6 @@ export function getAll() {
 }
 
 export function getFeat() {
-    console.log('pAPI')
     return sendRequest(`${BASE_URL}/featured`);
 }
 

@@ -6,16 +6,6 @@ import { UserOutlined, LockOutlined, MailOutlined, HomeOutlined, PhoneOutlined }
 
 export default function SignUpForm({ setUser }) {
 
-    const [components, setComponents] = useState({
-        name: '',
-        email: '',
-        password: '',
-        confirm: '',
-        address: '',
-        phoneNumber: '',
-    })
-
-
     const navigate = useNavigate();
     const [error, setError] = useState('');
     const {Title} = Typography
