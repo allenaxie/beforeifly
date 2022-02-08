@@ -60,7 +60,7 @@ orderSchema.statics.getCart = function (userId) {
 orderSchema.methods.addProductToCart = async function(productId) {
     // 'this' refers to the 'cart' (unpaid order)
     const cart = this;
-    const lineProduct = cart.lineProducts.find(lineProduct => lineProduct.item._id.equals(productId));
+    const lineProduct = cart.lineProducts.find(lineProduct => lineProduct.product._id.equals(productId));
     if (lineProduct) {
         // if the item is already in the cart, increase the qty
         lineProduct.qty +=1;
