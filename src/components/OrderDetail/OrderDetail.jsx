@@ -2,21 +2,13 @@
 import { Layout, Row, Col, Button, Form } from "antd";
 import "antd/dist/antd.css";
 import LineProduct from "../LineProduct/LineProduct";
-// import { loadStripe } from "@stripe/stripe-js";
 import { useNavigate } from "react-router-dom";
+import {loadStripe} from "@stripe/stripe-js"
 
 
-
-// // Stripe API
-// let stripePromise;
-
-// const getStripe = () => {
-//     if (!stripePromise) {
-//         stripePromise = loadStripe(process.env.STRIPE_PUBLISHABLE_KEY)
-//     }
-//     return stripePromise;
-// }
-
+// Make sure to call `loadStripe` outside of a component’s render to avoid
+// recreating the `Stripe` object on every render.
+const stripePromise = loadStripe(process.env.STRIPE_PUBLISHABLE_KEY);
 
 export default function OrderDetail ({cart, setCart}) {
 
@@ -28,6 +20,7 @@ export default function OrderDetail ({cart, setCart}) {
         </>
     );
 
+    
     // const { Meta } = Card;
     // const { Header, Content } = Layout;
 
@@ -41,24 +34,10 @@ export default function OrderDetail ({cart, setCart}) {
         setCart={setCart}
     />)
 
-    // const product = {
-    //     price: "$57",
-    //     quantity: 1,
-    // }
-
-    // const checkoutOptions = {
-    //     lineItems: [],
-    //     mode: "payment",
-    //     successUrl: '/',
-    //     cancelUrl: '/orders',
-    // }
-
-    // const redirectToCheckout = async () => {
-    //     console.log("redirectToCheckout");
-    //     const stripe = await getStripe();
-    //     const {error} = await stripe.redirectToCheckout(checkoutOptions);
-    //     console.log("Stripe checkout error", error);
-    // }
+    const options = {
+        // passing the client secret obtained from the server
+        clientSecret: '{{CLIENT_SECRET}}',
+    };
 
 
     return (
@@ -83,17 +62,14 @@ export default function OrderDetail ({cart, setCart}) {
       <h5>$20.00</h5>
       </div>
     </div>
-    <form action="/create-checkout-session" method="POST">
-      <button type="submit">
-        Checkout
-      </button>
-    </form>
-  </section>
+                    <form action="/create-checkout-session" method="POST">
                         <Button htmlType="submit" type="primary" 
-                        // onClick={redirectToCheckout}
                         >
                             Check Out
                         </Button>
+
+                    </form>
+  </section>
                    
                 </Col>
             </Row>

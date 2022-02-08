@@ -6,7 +6,7 @@ import ProductsIndexPage from "../ProductsIndexPage/ProductsIndexPage";
 import AuthPage from "../AuthPage/AuthPage";
 import OrderHistoryPage from "../OrderHistoryPage/OrderHistoryPage";
 import NavBar from "../../components/NavBar/NavBar";
-// import "@stripe/stripe-js";
+import "@stripe/stripe-js";
 import HomePage from "../HomePage/HomePage";
 import NewOrderPage from "../NewOrderPage/NewOrderPage";
 import { Layout, Button, } from "antd";
