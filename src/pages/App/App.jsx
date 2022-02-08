@@ -17,7 +17,6 @@ import {
 } from '@ant-design/icons';
 
 
-
 export default function App() {
   const [user, setUser] = useState(getUser());
   const { Header, Sider, Content } = Layout;
@@ -64,6 +63,7 @@ export default function App() {
               <Route path="/orders" element={<OrderHistoryPage />} />
               <Route path="/orders/cart" element={<NewOrderPage cart={cart} setCart={setCart} />} />
               <Route path="/users" element={<AuthPage hasAccount={hasAccount} setUser={setUser}/>}/>
+              
             </Routes>
           </Content>
         </Layout>

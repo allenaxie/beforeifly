@@ -11,7 +11,6 @@ export default function ProductItem({product, cart, setCart}) {
 
 
     async function handleAddToOrder (productId) {
-        console.log('productItem - productId',productId)
         const cart = await ordersAPI.addProductToCart(productId);
         setCart(cart);
     }

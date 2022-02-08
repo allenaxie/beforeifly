@@ -3,12 +3,17 @@ import { Layout, Row, Col, Button, Form } from "antd";
 import "antd/dist/antd.css";
 import LineProduct from "../LineProduct/LineProduct";
 import { useNavigate } from "react-router-dom";
-import {loadStripe} from "@stripe/stripe-js"
+import "@stripe/stripe-js";
+import {loadStripe} from "@stripe/stripe-js";
+import "@stripe/react-stripe-js";
+import * as ordersAPI from "../../utilities/orders-api";
 
+
+// // Stripe
 
 // Make sure to call `loadStripe` outside of a component’s render to avoid
 // recreating the `Stripe` object on every render.
-const stripePromise = loadStripe(process.env.STRIPE_PUBLISHABLE_KEY);
+// const stripePromise = loadStripe(process.env.STRIPE_PUBLISHABLE_KEY);
 
 export default function OrderDetail ({cart, setCart}) {
 
@@ -20,7 +25,6 @@ export default function OrderDetail ({cart, setCart}) {
         </>
     );
 
-    
     // const { Meta } = Card;
     // const { Header, Content } = Layout;
 
@@ -34,12 +38,6 @@ export default function OrderDetail ({cart, setCart}) {
         setCart={setCart}
     />)
 
-    const options = {
-        // passing the client secret obtained from the server
-        clientSecret: '{{CLIENT_SECRET}}',
-    };
-
-
     return (
         <Layout>
             <Row>
@@ -51,25 +49,18 @@ export default function OrderDetail ({cart, setCart}) {
                             
                         </Col>
                     </Row>
-                    <section>
-    <div className="product">
-      <img
-        src="https://i.imgur.com/EHyR2nP.png"
-        alt="The cover of Stubborn Attachments"
-      />
-      <div className="description">
-      <h3>Stubborn Attachments</h3>
-      <h5>$20.00</h5>
-      </div>
-    </div>
-                    <form action="/create-checkout-session" method="POST">
+                   
+                    <form 
+                     action="/create-checkout-session" 
+                     method="POST">
                         <Button htmlType="submit" type="primary" 
+                        
                         >
                             Check Out
                         </Button>
 
                     </form>
-  </section>
+
                    
                 </Col>
             </Row>

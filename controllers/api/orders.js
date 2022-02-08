@@ -1,9 +1,13 @@
 const Order = require('../../models/order');
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+
+
 
 module.exports = {
     cart,
     addToCart,
     setProductQtyInCart,
+    checkout,
 }
 
 async function cart(req, res) {
@@ -27,4 +31,13 @@ async function setProductQtyInCart(req, res) {
     // Set product quantity
     await cart.setProductQty(req.body.productId, req.body.newQty);
     res.json(cart);
+}
+
+// Update the cart's isPaid property to true
+async function checkout(req, res) {
+    // Find cart
+    const cart = await Order.getCart(req.user._id);
+    // cart.isPaid = true;
+    // await cart.save();
+    // res.json(cart);
 }

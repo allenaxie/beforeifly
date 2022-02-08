@@ -1,4 +1,3 @@
-
 const express = require('express');
 const path = require('path');
 const favicon = require('serve-favicon');
@@ -45,7 +44,8 @@ app.listen(port, function() {
 });
 
 
-// Stripe
+
+// // Stripe
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 app.post('/create-checkout-session', async (req, res) => {
@@ -57,7 +57,7 @@ app.post('/create-checkout-session', async (req, res) => {
           product_data: {
             name: 'T-shirt',
           },
-          unit_amount: 2000,
+          unit_amount: 20000,
         },
         quantity: 1,
       },
@@ -70,4 +70,3 @@ app.post('/create-checkout-session', async (req, res) => {
   res.redirect(303, session.url);
 });
 
-// app.listen(4242, () => console.log(`Listening on port ${4242}!`));

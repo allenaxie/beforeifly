@@ -19,3 +19,7 @@ export function setProductQtyInCart (productId, newQty) {
     console.log(productId, newQty)
     return sendRequest (`${BASE_URL}/cart/qty`, 'PUT', { productId, newQty});
 }
+
+export function checkout () {
+    return sendRequest (`${BASE_URL}/cart/checkout`, 'POST');
+}
