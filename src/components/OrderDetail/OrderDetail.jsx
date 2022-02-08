@@ -1,5 +1,5 @@
 import {useState, useEffect} from "react";
-import { Layout, Row, Col, Card } from "antd";
+import { Layout, Row, Col, Card, Button } from "antd";
 import "antd/dist/antd.css";
 import LineProduct from "../LineProduct/LineProduct";
 
@@ -29,6 +29,12 @@ export default function OrderDetail ({cart, setCart}) {
             <Row>
                 <Col span={12} offset={6}>
                     {lineProducts}
+                    <Row>
+                        <Col>
+                            Total: {cart.orderTotal}
+                        </Col>
+                    </Row>
+                    <Button type="primary">Check Out</Button>
                 </Col>
             </Row>
         </Layout>

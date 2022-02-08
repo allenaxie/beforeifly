@@ -15,28 +15,31 @@ export default function LineProduct ({lineProduct, cart, setCart}) {
     }
 
     return (
-        <Card
-        className="lineprod-card"
-        extra = {lineProduct.product.price}
-        title = {lineProduct.product.name}
-        cover = {
-            <Row>
-                <Col span={16} offset={4}>
-                    {/* <img 
-                    alt="product-image"
-                    src={lineProduct.product.imageURL}
-                    /> */}
-                </Col>
-            </Row>
-        }
-        >
-            <Meta
-                
-                description = {lineProduct.product.description}
-            />
-                <Button onClick={() => handleChangeQty(lineProduct.product._id, lineProduct.qty -1)}> - </Button>
-                Quantity: {lineProduct.qty}
-                <Button onClick={() => handleChangeQty(lineProduct.product._id, lineProduct.qty + 1)}> + </Button>
-        </Card>
+    
+            <Card
+            className="lineprod-card"
+            extra = {lineProduct.extPrice}
+            title = {lineProduct.product.name}
+            cover = {
+                <Row>
+                    <Col span={16} offset={4}>
+                        {/* <img 
+                        alt="product-image"
+                        src={lineProduct.product.imageURL}
+                        /> */}
+                    </Col>
+                </Row>
+            }
+            >
+                <Meta
+                    
+                    description = {lineProduct.product.description}
+                />
+                    <Button onClick={() => handleChangeQty(lineProduct.product._id, lineProduct.qty -1)}> - </Button>
+                    Quantity: {lineProduct.qty}
+                    <Button onClick={() => handleChangeQty(lineProduct.product._id, lineProduct.qty + 1)}> + </Button>
+            </Card>
+            
+      
     )
 }
