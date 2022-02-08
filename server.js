@@ -1,3 +1,4 @@
+const stripe = require('stripe')('sk_test_51KQl2jGiapiNklW6QkhIxJbkwHTntrkaLwPwkoXvjIIXIkoR0kw9x1BRYYVR0TSoldOLvBrwD12pzvb3nvKSIXyU00nYE7AJEj');
 const express = require('express');
 const path = require('path');
 const favicon = require('serve-favicon');
@@ -14,6 +15,13 @@ const app = express();
 
 app.use(logger('dev'));
 app.use(express.json());
+
+
+
+
+
+
+
 
 // Configure both serve-favicon & static middleware
 // to serve from the production 'build' folder
@@ -42,3 +50,31 @@ const port = process.env.PORT || 3001;
 app.listen(port, function() {
   console.log(`Express app running on port ${port}`)
 });
+
+
+
+
+
+app.post('/create-checkout-session', async (req, res) => {
+  const session = await stripe.checkout.sessions.create({
+    line_items: [
+      {
+        price_data: {
+          currency: 'usd',
+          product_data: {
+            name: 'T-shirt',
+          },
+          unit_amount: 2000,
+        },
+        quantity: 1,
+      },
+    ],
+    mode: 'payment',
+    success_url: 'http://localhost:3000/',
+    cancel_url: 'http://localhost:3000/orders',
+  });
+
+  res.redirect(303, session.url);
+});
+
+app.listen(4242, () => console.log(`Listening on port ${4242}!`));

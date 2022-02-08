@@ -6,7 +6,7 @@ import "./NewOrderPage.css";
 import * as ordersAPI from "../../utilities/orders-api";
 import OrderDetail from "../../components/OrderDetail/OrderDetail";
 
-export default function NewOrderPage ({cart, setCart}) {
+export default function NewOrderPage ({cart, setCart, stripe}) {
 
     const { Meta } = Card;
     const { Title } = Typography;
@@ -24,7 +24,7 @@ export default function NewOrderPage ({cart, setCart}) {
 
     return  (
         <>
-            <OrderDetail cart={cart} setCart={setCart}/>
+            <OrderDetail cart={cart} setCart={setCart} stripe={stripe}/>
         </>
     )
 }

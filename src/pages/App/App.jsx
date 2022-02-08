@@ -1,21 +1,22 @@
 import './App.css';
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 import { getUser } from "../../utilities/users-service";
 import { Routes, Route } from "react-router-dom";
 import ProductsIndexPage from "../ProductsIndexPage/ProductsIndexPage";
 import AuthPage from "../AuthPage/AuthPage";
 import OrderHistoryPage from "../OrderHistoryPage/OrderHistoryPage";
 import NavBar from "../../components/NavBar/NavBar";
-import ProductItem from "../../components/ProductItem/ProductItem";
-import * as productsAPI from "../../utilities/products-api";
+// import "@stripe/stripe-js";
 import HomePage from "../HomePage/HomePage";
 import NewOrderPage from "../NewOrderPage/NewOrderPage";
-import { Layout, Typography, Menu, Button, Row, Col } from "antd";
+import { Layout, Button, } from "antd";
 import 'antd/dist/antd.css';
 import {
   MenuUnfoldOutlined,
   MenuFoldOutlined,
 } from '@ant-design/icons';
+
+
 
 export default function App() {
   const [user, setUser] = useState(getUser());
