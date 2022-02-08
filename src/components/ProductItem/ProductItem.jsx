@@ -22,9 +22,10 @@ export default function ProductItem({product, cart, setCart}) {
             <Card
                 className="pi-card"
                 hoverable
+                extra = {product.price}
                 cover = {
                     <Row>
-                        <Col span={16} offset={3}>
+                        <Col span={16} offset={4}>
                         <img
                             alt="product-image"
                             src={product.imageURL}
