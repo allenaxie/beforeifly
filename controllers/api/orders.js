@@ -3,6 +3,7 @@ const Order = require('../../models/order');
 module.exports = {
     cart,
     addToCart,
+    setProductQtyInCart,
 }
 
 async function cart(req, res) {
@@ -17,5 +18,13 @@ async function addToCart (req, res) {
     // The promise resolves to the document, which we already have
     // in the cart variable, so no need to create another variable...
     await cart.addProductToCart(req.params.id);
+    res.json(cart);
+}
+
+async function setProductQtyInCart(req, res) {
+    // Find user's cart
+    const cart = await Order.getCart(req.user._id)
+    // Set product quantity
+    await cart.setProductQty(req.body.productId, req.body.newQty);
     res.json(cart);
 }

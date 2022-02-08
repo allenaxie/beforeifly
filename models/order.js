@@ -72,6 +72,22 @@ orderSchema.methods.addProductToCart = async function(productId) {
     return cart.save();
 }
 
-
+orderSchema.methods.setProductQty = async function (productId, newQty) {
+    // 'this' refers to the 'cart' (unpaid order)
+    const cart = this;
+    // Find the line product based on its product id
+    const lineProduct = cart.lineProducts.find(lineProduct => lineProduct.product._id.equals(productId));
+    // Remove item from cart if newQty is less than or equals 0
+    if (lineProduct && newQty <= 0) {
+        lineProduct.remove();
+    } 
+    // if product qty is true(greater than 0)
+    else if (lineProduct) {
+        // update quantity
+        lineProduct.qty = newQty;
+    }
+    // Save the cart
+    return cart.save();
+}
 
 module.exports = mongoose.model('Order', orderSchema);

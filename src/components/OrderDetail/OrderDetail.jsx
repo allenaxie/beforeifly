@@ -20,6 +20,8 @@ export default function OrderDetail ({cart, setCart}) {
     <LineProduct
         lineProduct = {product}
         key = {product._id}
+        cart={cart}
+        setCart={setCart}
     />)
 
     return (
