@@ -1,5 +1,6 @@
-import { Row, Col, Card, Button } from "antd";
+import { Row, Col, Card, Button, Image } from "antd";
 import "antd/dist/antd.css";
+import "./LineProduct.css"
 import * as ordersAPI from "../../utilities/orders-api";
 
 
@@ -14,30 +15,41 @@ export default function LineProduct ({lineProduct, cart, setCart}) {
         setCart(updatedCart)
     }
 
+
     return (
     
             <Card
             className="lineprod-card"
+            hoverable
             extra = {`$${lineProduct.extPrice}`}
-            title = {lineProduct.product.name}
+            
             cover = {
                 <Row>
                     <Col span={16} offset={4}>
-                        {/* <img 
-                        alt="product-image"
-                        src={lineProduct.product.imageURL}
-                        /> */}
+                        <Image 
+                        alt="lineProduct-image"
+                        // src={lineProduct.product.imageURL}
+                        />
                     </Col>
                 </Row>
             }
+            actions = {[
+                
+                    <Button onClick={() => handleChangeQty(lineProduct.product._id, lineProduct.qty -1)}> - </Button>,
+                    <span>
+                        Quantity: {lineProduct.qty}
+                    </span>,
+                    <Button onClick={() => handleChangeQty(lineProduct.product._id, lineProduct.qty + 1)}> + </Button>
+               
+            ]
+
+            }
             >
                 <Meta
-                    
+                    title = {lineProduct.product.name}
                     description = {lineProduct.product.description}
                 />
-                    <Button onClick={() => handleChangeQty(lineProduct.product._id, lineProduct.qty -1)}> - </Button>
-                    Quantity: {lineProduct.qty}
-                    <Button onClick={() => handleChangeQty(lineProduct.product._id, lineProduct.qty + 1)}> + </Button>
+                
             </Card>
             
       

@@ -6,7 +6,7 @@ import { Row, Col, Carousel, Input, Card, Typography, Layout, Menu, Button } fro
 import * as productsAPI from "../../utilities/products-api"
 import ProductItem from "../../components/ProductItem/ProductItem";
 
-export default function HomePage({ productItems, setProductItems ,cart, setCart }) {
+export default function HomePage({ productItems, setProductItems ,cart, setCart, user }) {
 
     const { Search } = Input
     const { Meta } = Card;
@@ -32,6 +32,7 @@ export default function HomePage({ productItems, setProductItems ,cart, setCart 
         product={p}
         cart = {cart}
         setCart = {setCart}
+        user={user}
     />)
 
 
@@ -46,18 +47,10 @@ export default function HomePage({ productItems, setProductItems ,cart, setCart 
                 <Row>
                     <Col>
                         <Carousel 
-                        // autoplay 
-                        className="carousel">
-                            <Row className="carouselItem1">
-                                <Col 
-                                xs={{span:18, offset:2}}
-                                sm={{span:16, offset:5}}
-                                md={{span:12, offset:7}}
-                                lg={{span:12, offset:9}}
-                                >
-                                    <img className="banner" src="images/logo-banner.png"></img>
-                                </Col>
-                            </Row>
+                        autoplay 
+                        className="carousel">        
+                            <img className="logo-banner" src="images/carousel-logo-banner.png"/>
+                              
                             <Row className="carouselItem2">
                                 <Col 
                                 xs={{span:18, offset:3}}

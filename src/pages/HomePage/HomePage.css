@@ -7,13 +7,15 @@
 
 /* Carousel */
 .carousel {
-    height:65vh;
+    width:80%;
     /* background: linear-gradient(to right,#c1cff2 -50%, #f4f4f7 130%); */
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.banner {
-    width: 22rem !important;
+.logo-banner {
+    width: 60% !important;
 }
 
 .sale-banner {

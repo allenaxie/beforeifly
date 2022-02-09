@@ -46,6 +46,11 @@ export default function NavBar({ user, setUser,setHasAccount }) {
       <Menu.Item key="3" icon={< ImportOutlined/>}>
         <Link to="/users" onClick={() => setHasAccount(true)}>Log In</Link>
       </Menu.Item>
+      <Menu.Item key="4" icon={<ShoppingOutlined />}>
+        <Link to="/products">
+          Browse products
+        </Link>
+      </Menu.Item>
       </>
       }
     </Menu>

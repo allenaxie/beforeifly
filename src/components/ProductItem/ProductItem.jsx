@@ -5,7 +5,7 @@ import "./ProductItem.css";
 import { ShoppingCartOutlined } from "@ant-design/icons";
 import * as ordersAPI from "../../utilities/orders-api";
 
-export default function ProductItem({product, cart, setCart}) {
+export default function ProductItem({product, cart, setCart, user}) {
 
     const { Meta } = Card
 
@@ -22,7 +22,9 @@ export default function ProductItem({product, cart, setCart}) {
     return (
         <Col 
         className= "product-item-col"
-        xs={{span:20, offset:2}} lg={{span:8, offset: 2}}>
+        xs={{span:20, offset:2}} 
+        lg={{span:8, offset: 2}}
+        >
             <Card
                 className="pi-card"
                 hoverable
@@ -38,12 +40,14 @@ export default function ProductItem({product, cart, setCart}) {
                         </Col>
                     </Row>
                 }
+                 
                 actions = {[
                     <>
-                        <Button onClick={()=>handleAddToOrder(product._id)} icon={<ShoppingCartOutlined key="cart" />}>Add To Cart </Button>
+                        {user && <Button onClick={()=>handleAddToOrder(product._id)} icon={<ShoppingCartOutlined key="cart" />}>Add To Cart </Button>}
                         
                     </>
                 ]}
+            
             >
                 <Meta
                     title={product.name}

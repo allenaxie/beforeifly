@@ -28,8 +28,6 @@ export default function OrderDetail ({cart, setCart}) {
     // const { Meta } = Card;
     // const { Header, Content } = Layout;
 
-    console.log('orderdetail cart',cart)
-
     const lineProducts = cart.lineProducts.map( product => 
     <LineProduct
         lineProduct = {product}
@@ -40,8 +38,11 @@ export default function OrderDetail ({cart, setCart}) {
 
     return (
         <Layout>
-            <Row>
-                <Col span={12} offset={6}>
+            <Row gutter={[32,32]}>
+                <Col 
+                xs={{span:20, offset:2}} 
+                md={{span:14, offset: 5}}
+                >
                     {lineProducts}
                     <Row>
                         <Col>

@@ -56,6 +56,7 @@ export default function ProductsIndexPage({ productItems, setProductItems, user,
               product={p}
               cart={cart}
               setCart={setCart}
+              user={user}
             />)
             // Else, show only products in that category
             :
@@ -65,6 +66,7 @@ export default function ProductsIndexPage({ productItems, setProductItems, user,
                 product={f}
                 cart={cart}
                 setCart={setCart}
+                user={user}
               />)
           }
         </Row>

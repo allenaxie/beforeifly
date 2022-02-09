@@ -1,0 +1,5 @@
+.set-qty-container {
+    display: flex !important;
+    justify-content: space-evenly !important;
+    margin-top: 2rem;
+}
