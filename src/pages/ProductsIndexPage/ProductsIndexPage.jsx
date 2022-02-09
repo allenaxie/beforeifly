@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import * as productsAPI from "../../utilities/products-api";
-import { Layout, Row, Col, Card } from "antd";
+import { Layout, Row, Col, Card, BackTop } from "antd";
 import 'antd/dist/antd.css';
 import ProductItem from "../../components/ProductItem/ProductItem";
 import CategoryList from "../../components/CategoryList/CategoryList";
@@ -34,7 +34,7 @@ export default function ProductsIndexPage({ productItems, setProductItems, user,
     <Layout>
       <Header className="category-tabs-container">
         <Row>
-          <Col span={12} offset={6}>
+          <Col span={16} offset={4}>
             <CategoryList
               categories={categoriesRef.current}
               activeCateg={activeCateg}
@@ -65,7 +65,7 @@ export default function ProductsIndexPage({ productItems, setProductItems, user,
           }
         </Row>
       </Content>
-
+          <BackTop visibilityHeight={800}/>
     </Layout>
   )
 }
