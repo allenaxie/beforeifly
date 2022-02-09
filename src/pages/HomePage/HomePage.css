@@ -7,13 +7,17 @@
 
 /* Carousel */
 .carousel {
-    height: 50vh;
+    height:65vh;
     background: linear-gradient(to right,#c1cff2 -50%, #f4f4f7 130%);
 }
 
 .banner {
-    width: 20rem !important;
-    /* margin-left: 5rem !important; */
+    width: 100% !important;
+}
+
+.sale-banner {
+    width: 80% !important;
+    margin-top: 2rem;
 }
 
 /* Featured Products */
