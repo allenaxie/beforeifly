@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const productSchema = require('./productSchema');
 
+
 const lineProductSchema = new Schema ({
     qty: {type: Number, default: 1},
     product: productSchema
@@ -80,6 +81,7 @@ orderSchema.methods.setProductQty = async function (productId, newQty) {
     // Remove item from cart if newQty is less than or equals 0
     if (lineProduct && newQty <= 0) {
         lineProduct.remove();
+        
     } 
     // if product qty is true(greater than 0)
     else if (lineProduct) {

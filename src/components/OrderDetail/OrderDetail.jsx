@@ -1,5 +1,5 @@
 // import {useState, useEffect} from "react";
-import { Layout, Row, Col, Button, Form } from "antd";
+import { Layout, Row, Col, Button, Form, Typography } from "antd";
 import "antd/dist/antd.css";
 import LineProduct from "../LineProduct/LineProduct";
 import { useNavigate } from "react-router-dom";
@@ -7,6 +7,7 @@ import "@stripe/stripe-js";
 import {loadStripe} from "@stripe/stripe-js";
 import "@stripe/react-stripe-js";
 import * as ordersAPI from "../../utilities/orders-api";
+import "./OrderDetail.css";
 
 
 // // Stripe
@@ -18,6 +19,7 @@ import * as ordersAPI from "../../utilities/orders-api";
 export default function OrderDetail ({cart, setCart}) {
 
     const navigate = useNavigate();
+    const { Title } = Typography
 
     if (!cart) return (
         <>
@@ -46,7 +48,9 @@ export default function OrderDetail ({cart, setCart}) {
                     {lineProducts}
                     <Row>
                         <Col>
-                            Total: ${cart.orderTotal.toFixed(2)}
+                            <Title className="total-price" level={4}>
+                                Total: ${cart.orderTotal.toFixed(2)}
+                            </Title>
                             
                         </Col>
                     </Row>
@@ -54,8 +58,10 @@ export default function OrderDetail ({cart, setCart}) {
                     <form 
                      action="/create-checkout-session" 
                      method="POST">
-                        <Button htmlType="submit" type="primary" 
-                        
+                        <Button 
+                        htmlType="submit" 
+                        type="primary" 
+                        className="checkout-btn"
                         >
                             Check Out
                         </Button>
