@@ -19,7 +19,7 @@ export default function ProductItem({product, cart, setCart}) {
             <Card
                 className="pi-card"
                 hoverable
-                extra = {product.price}
+                extra = {`$${product.price}`}
                 cover = {
                     <Row>
                         <Col span={16} offset={4}>

@@ -4,6 +4,7 @@ import { Layout, Row, Col, Card } from "antd";
 import 'antd/dist/antd.css';
 import ProductItem from "../../components/ProductItem/ProductItem";
 import CategoryList from "../../components/CategoryList/CategoryList";
+import "./ProductsIndexPage.css"
 
 
 export default function ProductsIndexPage({ productItems, setProductItems, user, cart, setCart }) {
@@ -31,15 +32,17 @@ export default function ProductsIndexPage({ productItems, setProductItems, user,
 
   return (
     <Layout>
-      <Row>
-        <Col span={12} offset={6}>
-          <CategoryList
-            categories={categoriesRef.current}
-            activeCateg={activeCateg}
-            setActiveCateg={setActiveCateg}
-          />
-        </Col>
-      </Row>
+      <Header className="category-tabs-container">
+        <Row>
+          <Col span={12} offset={6}>
+            <CategoryList
+              categories={categoriesRef.current}
+              activeCateg={activeCateg}
+              setActiveCateg={setActiveCateg}
+            />
+          </Col>
+        </Row>
+      </Header>
       <Content>
         <Row className="productsContainer" gutter={[16, 16]}>
           {/* If active category is All, show everything */}
