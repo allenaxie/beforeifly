@@ -68,9 +68,10 @@ export default function HomePage({ productItems, setProductItems ,cart, setCart 
                                     <img className="sale-banner" src="images/carousel-sale-banner.png"></img>   
                                 </Col>
                             </Row>
-                            <div className="carouselItem3">
-                                <div >yooooo</div>
-                            </div>
+                            
+                            <img className="travel-banner" src="images/carousel-travel-banner.png"></img>   
+                               
+                            
                         </Carousel>
                     </Col>
                 </Row>

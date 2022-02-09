@@ -8,16 +8,21 @@
 /* Carousel */
 .carousel {
     height:65vh;
-    background: linear-gradient(to right,#c1cff2 -50%, #f4f4f7 130%);
+    /* background: linear-gradient(to right,#c1cff2 -50%, #f4f4f7 130%); */
+    
 }
 
 .banner {
-    width: 100% !important;
+    width: 22rem !important;
 }
 
 .sale-banner {
     width: 80% !important;
     margin-top: 2rem;
+}
+
+.travel-banner {
+    width: 90% !important;
 }
 
 /* Featured Products */
