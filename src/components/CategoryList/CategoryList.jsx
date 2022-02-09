@@ -10,6 +10,7 @@ export default function CategoryList ({ categories ,activeCateg, setActiveCateg}
             key ={categ}
             className={categ === activeCateg ? 'active' : ''}
             onClick={() => setActiveCateg(categ)}
+           
         >
             {categ}
         </Button>
@@ -17,6 +18,9 @@ export default function CategoryList ({ categories ,activeCateg, setActiveCateg}
 
     return (
         <ul className="CategoryList">
+            <Button onClick={() => setActiveCateg('All')}>
+                All
+            </Button>
             {categs}
         </ul>
     )

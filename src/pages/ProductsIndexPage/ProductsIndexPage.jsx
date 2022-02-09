@@ -13,6 +13,7 @@ export default function ProductsIndexPage({productItems ,setProductItems, user, 
   const categoriesRef = useRef([])
   const [activeCateg, setActiveCateg] = useState('');
 
+
   useEffect(function () {
     async function getProducts() {
       const products = await productsAPI.getAll();
@@ -21,38 +22,24 @@ export default function ProductsIndexPage({productItems ,setProductItems, user, 
         return acc.includes(cat) ? acc : [...acc, cat]
       }, []);
       setProductItems(products)
-      setActiveCateg(products[0].category.name);
+      setActiveCateg('All');
     }
     getProducts();
   }, [])
 
-  let products;
 
 
-  products = productItems.map(p => 
-    <ProductItem 
-    key={p._id} 
-    product={p}
-    cart = {cart}
-    setCart = {setCart}
-  />)
+  // const products = productItems.map(p => 
+  //   <ProductItem 
+  //   key={p._id} 
+  //   product={p}
+  //   cart = {cart}
+  //   setCart = {setCart}
+  // />)
 
-  // if (activeCateg === "All") {
-  //   products = productItems.map(p => 
-  //     <ProductItem 
-  //     key={p._id} 
-  //     product={p}
-  //     cart = {cart}
-  //     setCart = {setCart}
-  //   />)
-  // } else {
-  //   products = productItems.filter(prod => prod.category.name === activeCateg)
-  // }
+  const filteredProducts = productItems.filter(p => p.category.name === activeCateg)
+  console.log(filteredProducts,'yooo')
 
-
- 
-  const filteredProducts = productItems.filter(prod => prod.category.name === activeCateg)
-  console.log(filteredProducts)
 
   return (
     <Layout>
@@ -67,7 +54,23 @@ export default function ProductsIndexPage({productItems ,setProductItems, user, 
       </Row>
       <Content>
         <Row className="productsContainer" gutter={[16, 16]}>
-          {products}
+          {/* {products} */}
+         { activeCateg === "All" ? productItems.map(p => 
+   <ProductItem 
+    key={p._id} 
+    product={p}
+    cart = {cart}
+    setCart = {setCart}
+  />)
+  :
+  filteredProducts.map(f => 
+    <ProductItem 
+     key={f._id} 
+     product={f}
+     cart = {cart}
+     setCart = {setCart}
+   />)
+         }
         </Row>
       </Content>
 
