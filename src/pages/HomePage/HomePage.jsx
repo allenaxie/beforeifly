@@ -13,10 +13,14 @@ export default function HomePage({ productItems, setProductItems ,cart, setCart 
     const { Title } = Typography;
     const { Header, Sider, Content } = Layout;
 
+
+
     useEffect(function () {
         async function getFeatProd() {
             const products = await productsAPI.getFeat();
-            setProductItems(products.slice(0,4));
+            // Display 4 random products
+            const randomInt = Math.floor(Math.random() * products.length -1)
+            setProductItems(products.slice(randomInt, randomInt + 4 ));
         }
         getFeatProd();
     },[])
