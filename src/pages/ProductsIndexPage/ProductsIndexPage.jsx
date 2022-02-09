@@ -32,6 +32,8 @@ export default function ProductsIndexPage({ productItems, setProductItems, user,
 
   const filteredProducts = productItems.filter(p => p.category.name === activeCateg)
 
+
+  console.log('categ',activeCateg)
   return (
     <Layout>
       <Header className="category-tabs-container">
