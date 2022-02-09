@@ -45,9 +45,16 @@ export default function HomePage({ productItems, setProductItems ,cart, setCart 
                 </Row>
                 <Row>
                     <Col>
-                        <Carousel autoplay className="carousel">
+                        <Carousel 
+                        autoplay 
+                        className="carousel">
                             <Row className="carouselItem1">
-                                <Col span={12} offset={6}>
+                                <Col 
+                                xs={{span:18, offset:3}}
+                                sm={{span:16, offset:5}}
+                                md={{span:12, offset:7}}
+                                lg={{span:12, offset:9}}
+                                >
                                     <img className="banner" src="images/logo-banner.png"></img>
                                 </Col>
                             </Row>
