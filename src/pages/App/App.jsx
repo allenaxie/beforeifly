@@ -33,7 +33,7 @@ export default function App() {
 
   
 
-  // console.log('app-cart', cart)
+  console.log('app-cart', cart)
 
   return (
     <main className="App">
@@ -44,7 +44,7 @@ export default function App() {
           collapsed={isCollapsed}
         >
           <div className="logo"></div>
-          <NavBar user={user} setUser={setUser} setHasAccount={setHasAccount}/>
+          <NavBar user={user} setUser={setUser} setHasAccount={setHasAccount} cart={cart}/>
         </Sider>
         <Layout className="main">
           <Header className="header">
