@@ -6,6 +6,7 @@ import * as ordersAPI from "../../utilities/orders-api";
 
 export default function LineProduct ({lineProduct, cart, setCart}) {
 
+   
     const { Meta } = Card
 
     async function handleChangeQty (productId, newQty) {
@@ -27,7 +28,7 @@ export default function LineProduct ({lineProduct, cart, setCart}) {
                     <Col span={16} offset={4}>
                         <Image 
                         alt="lineProduct-image"
-                        // src={lineProduct.product.imageURL}
+                        src={lineProduct.product.imageURL}
                         />
                     </Col>
                 </Row>

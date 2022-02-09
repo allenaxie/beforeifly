@@ -28,6 +28,7 @@ export default function NavBar({ user, setUser, setHasAccount, cart }) {
     setIsModalVisible(false);
   }
 
+  
   const columns = [
     {
       title: 'Name',
@@ -49,9 +50,9 @@ export default function NavBar({ user, setUser, setHasAccount, cart }) {
   const dataSource = [
     {
       key: '1',
-      name: user.name,
-      email: user.email,
-      address: user.address,
+      // name: user.name,
+      // email: user.email,
+      // address: user.address,
     }
   ]
   

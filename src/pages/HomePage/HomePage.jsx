@@ -20,7 +20,7 @@ export default function HomePage({ productItems, setProductItems ,cart, setCart,
         async function getFeatProd() {
             const products = await productsAPI.getFeat();
             // Display 4 random products
-            const randomInt = Math.floor(Math.random() * products.length -1)
+            const randomInt = Math.floor(Math.random() * products.length -4)
             setProductItems(products.slice(randomInt, randomInt + 4 ));
         }
         getFeatProd();
@@ -50,7 +50,7 @@ export default function HomePage({ productItems, setProductItems ,cart, setCart,
                         <Carousel 
                         autoplay 
                         className="carousel">        
-                            <img className="logo-banner" src="images/carousel-logo-banner.png"/>
+                            <img className="logo-banner" src="/images/carousel-logo-banner.png"/>
                               
                             {/* <Row className="carouselItem2">
                                 <Col 
@@ -59,10 +59,10 @@ export default function HomePage({ productItems, setProductItems ,cart, setCart,
                                 md={{span:12, offset:7}}
                                 lg={{span:12, offset:8}}
                                 > */}
-                            <img className="sale-banner" src="images/carousel-sale-banner.png"></img>   
+                            <img className="sale-banner" src="/images/carousel-sale-banner.png"/>  
                                 {/* </Col>
                             </Row> */}
-                            <img className="travel-banner" src="images/carousel-travel-banner.png"></img>   
+                            <img className="travel-banner" src="/images/carousel-travel-banner.png"/>   
                                 
                         </Carousel>
                     </Col>
