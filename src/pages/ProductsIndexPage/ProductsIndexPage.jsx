@@ -14,6 +14,8 @@ export default function ProductsIndexPage({ productItems, setProductItems, user,
   const categoriesRef = useRef([])
   const [activeCateg, setActiveCateg] = useState('');
 
+  
+
 
   useEffect(function () {
     async function getProducts() {

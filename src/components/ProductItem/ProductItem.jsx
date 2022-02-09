@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Layout, Row, Col, Card, Button } from "antd";
+import { Layout, Row, Col, Card, Button, message } from "antd";
 import 'antd/dist/antd.css';
 import "./ProductItem.css";
 import { ShoppingCartOutlined } from "@ant-design/icons";
@@ -12,8 +12,13 @@ export default function ProductItem({product, cart, setCart}) {
     async function handleAddToOrder (productId) {
         const cart = await ordersAPI.addProductToCart(productId);
         setCart(cart);
+        success()
     }
   
+    function success () {
+        message.success('Product added to cart!')
+      }
+
     return (
         <Col 
         className= "product-item-col"

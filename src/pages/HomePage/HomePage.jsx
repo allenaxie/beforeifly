@@ -64,11 +64,6 @@ export default function HomePage({ productItems, setProductItems ,cart, setCart 
                 <Row className="productsContainer" gutter={[32, 32]}>
                     {products}
                 </Row>
-                <Row className="browseLinkContainer">
-                    <Col span={12} offset={6}>
-                        <Link className="browseItemsLink" to="/products">Browse more items...</Link>
-                    </Col>
-                </Row>
             </Content>
         </Layout>
 
