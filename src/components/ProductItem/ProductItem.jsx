@@ -17,7 +17,7 @@ export default function ProductItem({product, cart, setCart}) {
     return (
         <Col 
         className= "product-item-col"
-        xs={{span:20, offset:2}} offset={2}>
+        xs={{span:20, offset:2}} lg={{span:8, offset: 2}}>
             <Card
                 className="pi-card"
                 hoverable
