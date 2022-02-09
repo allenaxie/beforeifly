@@ -6,7 +6,7 @@ import ProductItem from "../../components/ProductItem/ProductItem";
 import CategoryList from "../../components/CategoryList/CategoryList";
 
 
-export default function ProductsIndexPage({productItems ,setProductItems, user, cart, setCart}) {
+export default function ProductsIndexPage({ productItems, setProductItems, user, cart, setCart }) {
 
   const { Header, Sider, Content } = Layout;
   const { Meta } = Card
@@ -27,50 +27,39 @@ export default function ProductsIndexPage({productItems ,setProductItems, user, 
     getProducts();
   }, [])
 
-
-
-  // const products = productItems.map(p => 
-  //   <ProductItem 
-  //   key={p._id} 
-  //   product={p}
-  //   cart = {cart}
-  //   setCart = {setCart}
-  // />)
-
   const filteredProducts = productItems.filter(p => p.category.name === activeCateg)
-  console.log(filteredProducts,'yooo')
-
 
   return (
     <Layout>
       <Row>
         <Col span={12} offset={6}>
           <CategoryList
-          categories={categoriesRef.current}
-          activeCateg={activeCateg}
-          setActiveCateg={setActiveCateg}
+            categories={categoriesRef.current}
+            activeCateg={activeCateg}
+            setActiveCateg={setActiveCateg}
           />
         </Col>
       </Row>
       <Content>
         <Row className="productsContainer" gutter={[16, 16]}>
-          {/* {products} */}
-         { activeCateg === "All" ? productItems.map(p => 
-   <ProductItem 
-    key={p._id} 
-    product={p}
-    cart = {cart}
-    setCart = {setCart}
-  />)
-  :
-  filteredProducts.map(f => 
-    <ProductItem 
-     key={f._id} 
-     product={f}
-     cart = {cart}
-     setCart = {setCart}
-   />)
-         }
+          {/* If active category is All, show everything */}
+          {activeCateg === "All" ? productItems.map(p =>
+            <ProductItem
+              key={p._id}
+              product={p}
+              cart={cart}
+              setCart={setCart}
+            />)
+            // Else, show only products in that category
+            :
+            filteredProducts.map(f =>
+              <ProductItem
+                key={f._id}
+                product={f}
+                cart={cart}
+                setCart={setCart}
+              />)
+          }
         </Row>
       </Content>
 

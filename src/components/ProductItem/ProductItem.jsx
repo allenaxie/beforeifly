@@ -9,13 +9,11 @@ export default function ProductItem({product, cart, setCart}) {
 
     const { Meta } = Card
 
-
     async function handleAddToOrder (productId) {
         const cart = await ordersAPI.addProductToCart(productId);
         setCart(cart);
     }
   
-
     return (
         <Col span={8} offset={2}>
             <Card
