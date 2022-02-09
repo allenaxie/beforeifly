@@ -61,7 +61,7 @@ export default function HomePage({ productItems, setProductItems ,cart, setCart 
                         <Title level={2}>Featured Products</Title>
                     </Col>
                 </Row>
-                <Row className="productsContainer" gutter={[16, 24]}>
+                <Row className="productsContainer" gutter={[32, 32]}>
                     {products}
                 </Row>
                 <Row className="browseLinkContainer">

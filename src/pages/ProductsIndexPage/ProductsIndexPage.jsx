@@ -44,7 +44,7 @@ export default function ProductsIndexPage({ productItems, setProductItems, user,
         </Row>
       </Header>
       <Content>
-        <Row className="productsContainer" gutter={[16, 16]}>
+        <Row className="productsContainer" gutter={[32,32]}>
           {/* If active category is All, show everything */}
           {activeCateg === "All" ? productItems.map(p =>
             <ProductItem

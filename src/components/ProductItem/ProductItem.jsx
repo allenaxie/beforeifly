@@ -15,11 +15,14 @@ export default function ProductItem({product, cart, setCart}) {
     }
   
     return (
-        <Col span={8} offset={2}>
+        <Col 
+        className= "product-item-col"
+        xs={{span:20, offset:2}} offset={2}>
             <Card
                 className="pi-card"
                 hoverable
                 extra = {`$${product.price}`}
+                
                 cover = {
                     <Row>
                         <Col span={16} offset={4}>
@@ -33,6 +36,7 @@ export default function ProductItem({product, cart, setCart}) {
                 actions = {[
                     <>
                         <Button onClick={()=>handleAddToOrder(product._id)} icon={<ShoppingCartOutlined key="cart" />}>Add To Cart </Button>
+                        
                     </>
                 ]}
             >

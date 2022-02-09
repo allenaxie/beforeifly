@@ -26,7 +26,7 @@ const Product = require('./models/product');
         // Luggages
         {name: 'Samsonite Omni 2 Midnight Black Luggage', description: '28" spinner luggage - maximizes your packing power and is the ideal checked bag for longer trips', imageURL: 'images/suitcase1.jpg', price: 159.99, category:categories[1]},
         {name: 'DELSEY Paris Champagne White Luggage', description: '24" lightweight and durable 100% polycarbonate shell that is extremely resilient to cracking or breaking', imageURL: 'images/suitcase2.png', price: 350.99, category:categories[1]},
-        {name: 'Travelpro Maxlite 5 Azure Blue', description: '25" durable, lightweight checked-bag with expansion option lets you pack more with a 100% polycarbonate hard shell engineered to combine impact-absorbing flexibility and extreme lightweight design', imageURL: 'images/suitcase3.png', price: 149.99, category:categories[1]},
+        {name: 'Travelpro Maxlite 5 Azure Blue', description: '25" durable, lightweight checked-bag with expansion option. 100% polycarbonate hard shell engineered to combine impact-absorbing flexibility and extreme lightweight design', imageURL: 'images/suitcase3.png', price: 149.99, category:categories[1]},
         {name: 'Large Travel bag', description: 'Cool, new, large multi-functional travel bag', imageURL: 'images/Large-travel-bags.jpeg', price: 59.99, category:categories[1]},
         {name: 'Nick Cage Bag', description: "If Nicholas Cage measured stuff, he'd be Nicholas Gauge.", imageURL: 'images/Nic-cage-backpack.jpeg', price: 19.99, category:categories[1]},
         // Toiletries
