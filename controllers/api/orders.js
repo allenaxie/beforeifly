@@ -8,6 +8,7 @@ module.exports = {
     addToCart,
     setProductQtyInCart,
     checkout,
+    getAll,
 }
 
 async function cart(req, res) {
@@ -40,4 +41,11 @@ async function checkout(req, res) {
     // cart.isPaid = true;
     // await cart.save();
     // res.json(cart);
+}
+
+
+async function getAll (req,res) {
+    // Find orders that belong to user and are already paid
+    const orders = await Order.find({user: req.user._id, isPaid: true})
+    res.json(orders);
 }
