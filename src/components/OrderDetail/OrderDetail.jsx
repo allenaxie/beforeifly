@@ -8,6 +8,7 @@ import {loadStripe} from "@stripe/stripe-js";
 import "@stripe/react-stripe-js";
 import * as ordersAPI from "../../utilities/orders-api";
 import "./OrderDetail.css";
+import * as paymentsAPI from "../../utilities/payments-api"
 
 
 // // Stripe
@@ -38,6 +39,10 @@ export default function OrderDetail ({cart, setCart}) {
         setCart={setCart}
     />)
 
+    async function handlePayment () {
+        await paymentsAPI.handlePayment();
+    }
+
     return (
         <Layout>
             <Row gutter={[32,32]}>
@@ -55,18 +60,17 @@ export default function OrderDetail ({cart, setCart}) {
                         </Col>
                     </Row>
                    
-                    <form 
-                     action="/create-checkout-session" 
-                     method="POST">
+      
                         <Button 
                         htmlType="submit" 
                         type="primary" 
                         className="checkout-btn"
+                        onClick= {handlePayment}
                         >
                             Check Out
                         </Button>
 
-                    </form>
+  
 
                    
                 </Col>
