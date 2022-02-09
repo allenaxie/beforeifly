@@ -20,7 +20,6 @@ export default function NewOrderPage ({cart, setCart, stripe}) {
         getCart();
     }, [])
 
-    // console.log('neworder cart',cart)
 
     return  (
         <>

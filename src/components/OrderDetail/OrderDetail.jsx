@@ -45,7 +45,7 @@ export default function OrderDetail ({cart, setCart}) {
                     {lineProducts}
                     <Row>
                         <Col>
-                            Total: {cart.orderTotal}
+                            Total: ${cart.orderTotal.toFixed(2)}
                             
                         </Col>
                     </Row>

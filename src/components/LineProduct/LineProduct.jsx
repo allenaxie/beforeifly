@@ -18,7 +18,7 @@ export default function LineProduct ({lineProduct, cart, setCart}) {
     
             <Card
             className="lineprod-card"
-            extra = {lineProduct.extPrice}
+            extra = {`$${lineProduct.extPrice}`}
             title = {lineProduct.product.name}
             cover = {
                 <Row>
