@@ -47,7 +47,7 @@ async function checkout(req, res) {
     // res.json(cart);
 
     // const session = await stripe.checkout.sessions.expire(
-    //     'cs_test_a1VXZHGXWm8eKsBmEXKs5Bh6rKB5jt8Tpn8GRIBipdMSn15SzsNOMTCg3J'
+    //     'cs_test_a1rxt8ZnFgRXi8Kyqsbpuon18LKBBtHSBQkuKPC6NVEdH8NonH7wA9UrXX'
     //   );
 
 }
@@ -57,6 +57,9 @@ async function getAll(req, res) {
     // Find orders that belong to user and are already paid
     const orders = await Order.find({ user: req.user._id, isPaid: true })
     res.json(orders);
+    const session = await stripe.checkout.sessions.expire(
+        'cs_test_a1MZB5RkUywzBXALzSowVRCEWE3rdifVxxWyzmMYVjjuVJQwanmsRgcvU8'
+      );
 }
 
 

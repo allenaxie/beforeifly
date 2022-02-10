@@ -29,6 +29,7 @@ async function handlePayment (req,res) {
         success_url: `${process.env.SERVER_URL}/orders/checkout-success?session_id={CHECKOUT_SESSION_ID}`,
         cancel_url: `${process.env.SERVER_URL}/orders/cart`,
       });
+      console.log('stripe sessionsssss', stripe.checkout.sessions)
     //   Redirect to Stripe payment page
       res.json({ url: session.url })
       console.log('payment finished')
