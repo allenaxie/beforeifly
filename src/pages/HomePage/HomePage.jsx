@@ -20,7 +20,7 @@ export default function HomePage({ productItems, setProductItems ,cart, setCart,
             // Display 4 random products
             const randomInt = Math.floor(Math.random() * products.length -4)
             console.log('randomInt', randomInt)
-            setProductItems(products.slice(randomInt, randomInt + 4 ));
+            setProductItems(products.slice(Math.abs(randomInt), Math.abs(randomInt) + 4 ));
         }
         getFeatProd();
     },[])
