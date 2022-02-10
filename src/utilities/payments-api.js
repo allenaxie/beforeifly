@@ -12,7 +12,7 @@ export async function handlePayment() {
             "Content-Type": "application/json",
             "Authorization": `Bearer ${token}`,
         },
-        body: JSON.stringify({}),
+        body: JSON.stringify(),
     })
     .then(res => {
         console.log('fetch complete')

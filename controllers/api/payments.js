@@ -31,5 +31,5 @@ async function handlePayment (req,res) {
       });
       console.log('payment-controller function done')
     //   Redirect to Stripe payment page
-      res.redirect(303, session.url);
+      res.json({ url: session.url })
 }
