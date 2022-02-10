@@ -52,13 +52,14 @@ export default function NavBar({ user, setUser, setHasAccount, cart }) {
     },
   ];
 
+  console.log(user)
   const dataSource = user ?[
     {
       key: '1',
       name: user.name,
       email: user.email,
       address: user.address,
-      phone: user['phone-number'],
+      phone: user.phoneNumber,
     }
   ] : 'none'
     

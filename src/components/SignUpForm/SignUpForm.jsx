@@ -109,12 +109,12 @@ export default function SignUpForm({ setUser }) {
                     </Form.Item>
                     {/* Phone Number */}
                     <Form.Item
-                        name="phone-number"
+                        name="phoneNumber"
                     >
                         <Input
                             prefix={<PhoneOutlined className="site-form-item-icon" />}
                             placeholder="Phone Number"
-                            name="phone number"
+                            name="phoneNumber"
                         />
                     </Form.Item>
                     {/* Submit button */}

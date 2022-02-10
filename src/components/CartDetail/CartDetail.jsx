@@ -1,8 +1,6 @@
-// import {useState, useEffect} from "react";
-import { Layout, Row, Col, Button, Form, Typography } from "antd";
+import { Layout, Row, Col, Button, Typography } from "antd";
 import "antd/dist/antd.css";
 import LineProduct from "../LineProduct/LineProduct";
-import { useNavigate } from "react-router-dom";
 import "@stripe/stripe-js";
 import "@stripe/react-stripe-js";
 import "./CartDetail.css";
@@ -11,19 +9,13 @@ import * as paymentsAPI from "../../utilities/payments-api"
 
 export default function CartDetail ({cart, setCart}) {
 
-    const navigate = useNavigate();
     const { Title } = Typography
-
-    console.log('cart detail',cart)
 
     if (!cart) return (
         <>
         <h1>No items in cart yet!</h1>
         </>
     );
-
-    // const { Meta } = Card;
-    // const { Header, Content } = Layout;
 
     const lineProducts = cart.lineProducts.map( product => 
     <LineProduct
