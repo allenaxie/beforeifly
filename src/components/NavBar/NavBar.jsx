@@ -45,8 +45,12 @@ export default function NavBar({ user, setUser, setHasAccount, cart }) {
       dataIndex: 'address',
       key: 'address'
     },
+    {
+      title: 'Phone Number',
+      dataIndex: 'phone',
+      key: 'phone'
+    },
   ];
-
 
   const dataSource = user ?[
     {
@@ -54,6 +58,7 @@ export default function NavBar({ user, setUser, setHasAccount, cart }) {
       name: user.name,
       email: user.email,
       address: user.address,
+      phone: user['phone-number'],
     }
   ] : 'none'
     
