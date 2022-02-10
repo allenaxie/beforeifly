@@ -50,7 +50,7 @@ export default function HomePage({ productItems, setProductItems ,cart, setCart,
                         <Carousel 
                         autoplay 
                         className="carousel">        
-                            <img className="logo-banner" src="/images/carousel-logo-banner.png"/>
+                            <img className="logo-banner" src="https://i.imgur.com/aHhHo3o.png"/>
                               
                             {/* <Row className="carouselItem2">
                                 <Col 
@@ -59,10 +59,10 @@ export default function HomePage({ productItems, setProductItems ,cart, setCart,
                                 md={{span:12, offset:7}}
                                 lg={{span:12, offset:8}}
                                 > */}
-                            <img className="sale-banner" src="/images/carousel-sale-banner.png"/>  
+                            <img className="sale-banner" src="https://i.imgur.com/hDw3r3N.png"/>  
                                 {/* </Col>
                             </Row> */}
-                            <img className="travel-banner" src="/images/carousel-travel-banner.png"/>   
+                            <img className="travel-banner" src="https://i.imgur.com/3lwQCtz.png"/>   
                                 
                         </Carousel>
                     </Col>
