@@ -9,6 +9,7 @@ module.exports = {
     setProductQtyInCart,
     checkout,
     getAll,
+    getSession,
 }
 
 async function cart(req, res) {
@@ -17,7 +18,7 @@ async function cart(req, res) {
     res.json(cart);
 }
 
-async function addToCart (req, res) {
+async function addToCart(req, res) {
     // Find user's cart
     const cart = await Order.getCart(req.user._id);
     // The promise resolves to the document, which we already have
@@ -36,16 +37,29 @@ async function setProductQtyInCart(req, res) {
 
 // Update the cart's isPaid property to true
 async function checkout(req, res) {
+    console.log('reqquery',req.query)
+    console.log('req',req)
+
     // Find cart
-    const cart = await Order.getCart(req.user._id);
+    // const cart = await Order.getCart(req.user._id);
     // cart.isPaid = true;
     // await cart.save();
     // res.json(cart);
+
+    // const session = await stripe.checkout.sessions.expire(
+    //     'cs_test_a1VXZHGXWm8eKsBmEXKs5Bh6rKB5jt8Tpn8GRIBipdMSn15SzsNOMTCg3J'
+    //   );
+
 }
 
 
-async function getAll (req,res) {
+async function getAll(req, res) {
     // Find orders that belong to user and are already paid
-    const orders = await Order.find({user: req.user._id, isPaid: true})
+    const orders = await Order.find({ user: req.user._id, isPaid: true })
     res.json(orders);
+}
+
+
+async function getSession (req,res) {
+    console.log('get session')
 }

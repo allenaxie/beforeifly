@@ -9,6 +9,7 @@ import NavBar from "../../components/NavBar/NavBar";
 import "@stripe/stripe-js";
 import HomePage from "../HomePage/HomePage";
 import NewOrderPage from "../NewOrderPage/NewOrderPage";
+import CheckoutSuccessPage from '../CheckoutSuccessPage/CheckoutSuccessPage';
 import { Layout, Button, } from "antd";
 import 'antd/dist/antd.css';
 import {
@@ -62,6 +63,7 @@ export default function App() {
               <Route path="/products" element={<ProductsIndexPage productItems={productItems} setProductItems={setProductItems} user={user} cart={cart} setCart={setCart}/>} />
               <Route path="/orders" element={<OrderHistoryPage user={user} setUser={setUser} />} />
               <Route path="/orders/cart" element={<NewOrderPage cart={cart} setCart={setCart} />} />
+              <Route path="/orders/checkout-success" element={<CheckoutSuccessPage cart={cart}/>}/>
               <Route path="/users" element={<AuthPage hasAccount={hasAccount} setUser={setUser}/>}/>
             </Routes>
           </Content>

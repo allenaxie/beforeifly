@@ -13,7 +13,7 @@ export default function OrderList ({ordersList}) {
             key: order.id,
             orderId: order.orderId,
             datePurchased: new Date(order.updatedAt).toLocaleDateString(),
-            orderTotal: order.orderTotal,
+            orderTotal: order.orderTotal.toFixed(2),
             totalQty: order.totalQty,
              })
     )

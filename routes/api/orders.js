@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const ordersCtrl = require('../../controllers/api/orders');
+const paymentsCtrl = require('../../controllers/api/payments');
 
 // BASE_URL = /api/orders
 
@@ -14,5 +15,7 @@ router.put('/cart/qty', ordersCtrl.setProductQtyInCart);
 router.post('/cart/checkout', ordersCtrl.checkout);
 // GET /api/orders
 router.get('/', ordersCtrl.getAll);
+// GET /api/orders/session
+router.get('/session', ordersCtrl.checkout);
 
 module.exports = router;

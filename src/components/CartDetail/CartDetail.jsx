@@ -14,6 +14,8 @@ export default function CartDetail ({cart, setCart}) {
     const navigate = useNavigate();
     const { Title } = Typography
 
+    console.log('cart detail',cart)
+
     if (!cart) return (
         <>
         <h1>No items in cart yet!</h1>

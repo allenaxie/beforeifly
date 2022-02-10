@@ -4,12 +4,12 @@ const Order = require('../../models/order');
 
 module.exports = {
     handlePayment,
+
 }
 
 async function handlePayment (req,res) {
     // Find user's cart
     const cart = await Order.getCart(req.user._id);
-    console.log('payment-controller',cart)
     // Create and redirect to Stripe's checkout session
     const session = await stripe.checkout.sessions.create({
         payment_method_types: ['card'],
@@ -21,15 +21,17 @@ async function handlePayment (req,res) {
                     product_data: {
                         name: product.product.name,
                     },
-                    unit_amount: product.extPrice*100,
+                    unit_amount: (product.extPrice * 100).toFixed(0),
                 },
                 quantity: product.qty,
             }
         }),
-        success_url: `${process.env.SERVER_URL}`,
+        success_url: `${process.env.SERVER_URL}/orders/checkout-success?session_id={CHECKOUT_SESSION_ID}`,
         cancel_url: `${process.env.SERVER_URL}/orders/cart`,
       });
-      console.log('payment-controller function done')
     //   Redirect to Stripe payment page
       res.json({ url: session.url })
+      console.log('payment finished')
 }
+
+

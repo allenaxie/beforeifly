@@ -27,3 +27,7 @@ export function checkout () {
 export function getAll () {
     return sendRequest (BASE_URL);
 }
+
+export function getSession () {
+    return sendRequest (`${BASE_URL}/session`)
+}
