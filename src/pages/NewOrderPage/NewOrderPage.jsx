@@ -4,7 +4,7 @@ import { Row, Col, Card, Typography, Layout, Menu, Button } from 'antd';
 import 'antd/dist/antd.css';
 import "./NewOrderPage.css";
 import * as ordersAPI from "../../utilities/orders-api";
-import OrderDetail from "../../components/OrderDetail/OrderDetail";
+import CartDetail from "../../components/CartDetail/CartDetail";
 
 export default function NewOrderPage ({cart, setCart, stripe}) {
 
@@ -23,7 +23,7 @@ export default function NewOrderPage ({cart, setCart, stripe}) {
 
     return  (
         <>
-            <OrderDetail cart={cart} setCart={setCart} stripe={stripe}/>
+            <CartDetail cart={cart} setCart={setCart} stripe={stripe}/>
         </>
     )
 }

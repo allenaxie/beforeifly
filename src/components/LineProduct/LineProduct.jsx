@@ -6,7 +6,6 @@ import * as ordersAPI from "../../utilities/orders-api";
 
 export default function LineProduct ({lineProduct, cart, setCart}) {
 
-   
     const { Meta } = Card
 
     async function handleChangeQty (productId, newQty) {
