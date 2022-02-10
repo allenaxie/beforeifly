@@ -24,7 +24,7 @@ export default function OrderListItem ({order}) {
             sorter: (a,b) => a.orderTotal - b.orderTotal,
         },
         {
-            title: "Total Quantity",
+            title: "No. of Items",
             dataIndex: "totalQty",
             key: "totalQty", 
         },
@@ -34,8 +34,9 @@ export default function OrderListItem ({order}) {
         {
             key: order.id,
             orderId: order.orderId,
-            datePurchased: order.updatedAt,
+            datePurchased: new Date(order.updatedAt).toLocaleDateString(),
             orderTotal: order.orderTotal,
+            totalQty: order.totalQty,
         }
     ]
 
