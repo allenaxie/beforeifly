@@ -1,6 +1,8 @@
 .App {
   text-align: center;
   overflow-x: hidden;
+  margin-bottom: 45px !important;
+  height: 100vh;
 }
 
 /* Header */

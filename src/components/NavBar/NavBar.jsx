@@ -75,7 +75,6 @@ export default function NavBar({ user, setUser, setHasAccount, cart }) {
       {
         user ?
           <>
-
             <Menu.Item 
             id="nav-profile" 
             key="8" 
@@ -84,7 +83,7 @@ export default function NavBar({ user, setUser, setHasAccount, cart }) {
             >
               Profile
             </Menu.Item>
-            
+            {/* User modal */}
             <Modal 
             title="User Info" 
             visible={isModalVisible} 
@@ -102,8 +101,6 @@ export default function NavBar({ user, setUser, setHasAccount, cart }) {
               />
             </Modal>
             
-
-
             <Menu.Item key="4" icon={<ShoppingOutlined />}>
               <Link to="/products">
                 Browse products

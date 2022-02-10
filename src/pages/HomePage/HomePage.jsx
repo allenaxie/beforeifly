@@ -42,7 +42,7 @@ export default function HomePage({ productItems, setProductItems ,cart, setCart,
                 <Row className="carousel-row-container">
                     <Col span={18} className="carousel-container">
                         <Carousel 
-                        // autoplay 
+                        autoplay 
                         className="carousel"> 
                             <div>
                                 <Row>

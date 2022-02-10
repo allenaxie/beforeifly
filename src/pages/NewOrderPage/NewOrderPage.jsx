@@ -16,9 +16,9 @@ export default function NewOrderPage ({cart, setCart, stripe}) {
     }, [])
 
     return  (
-        <>
+        <div className="neworderpage-main">
             <CartDetail cart={cart} setCart={setCart} stripe={stripe}/>
 
-        </>
+        </div>
     )
 }

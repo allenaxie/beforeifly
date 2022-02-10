@@ -3,6 +3,7 @@ import * as ordersAPI from "../../utilities/orders-api";
 import OrderList from "../../components/OrderList/OrderList";
 import { Typography, Result, Button } from "antd";
 import { useNavigate } from "react-router-dom" 
+import "./OrderHistoryPage.css"
 
 
 export default function OrderHistoryPage({user, setUser}) {
@@ -30,7 +31,7 @@ export default function OrderHistoryPage({user, setUser}) {
 
 
   return (
-    <div>
+    <div className="orderhistorypage-main">
 
       {orderHistory.length > 0 ? <OrderList ordersList={orderHistory} /> :
       <Result

@@ -44,15 +44,10 @@ export default function OrderList ({ordersList}) {
     ]
 
     return (
-        // <>
-        //     {order}
-        // </>
       <Table 
       columns={columns}
       dataSource={data}
       pagination={false}
-
-      
       />
     )
 }
