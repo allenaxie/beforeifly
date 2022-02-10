@@ -1,4 +1,5 @@
-import {Table} from "antd";
+import {Table, Button} from "antd";
+
 
 export default function OrderList ({ordersList}) {
 
@@ -23,6 +24,7 @@ export default function OrderList ({ordersList}) {
             title: "Order ID",
             dataIndex: "orderId",
             key: "orderId", 
+            render: orderId => <Button type="link">{orderId}</Button>,
         },
         {
             title: "Date Purchased",
