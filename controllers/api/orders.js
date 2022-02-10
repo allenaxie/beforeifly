@@ -41,15 +41,10 @@ async function checkout(req, res) {
     console.log('req',req)
 
     // Find cart
-    // const cart = await Order.getCart(req.user._id);
-    // cart.isPaid = true;
-    // await cart.save();
-    // res.json(cart);
-
-    // const session = await stripe.checkout.sessions.expire(
-    //     'cs_test_a1rxt8ZnFgRXi8Kyqsbpuon18LKBBtHSBQkuKPC6NVEdH8NonH7wA9UrXX'
-    //   );
-
+    const cart = await Order.getCart(req.user._id);
+    cart.isPaid = true;
+    await cart.save();
+    res.json(cart);
 }
 
 
@@ -57,9 +52,6 @@ async function getAll(req, res) {
     // Find orders that belong to user and are already paid
     const orders = await Order.find({ user: req.user._id, isPaid: true })
     res.json(orders);
-    const session = await stripe.checkout.sessions.expire(
-        'cs_test_a1MZB5RkUywzBXALzSowVRCEWE3rdifVxxWyzmMYVjjuVJQwanmsRgcvU8'
-      );
 }
 
 

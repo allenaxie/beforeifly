@@ -6,7 +6,7 @@ export async function handlePayment() {
   // used to include a data payload, set headers, etc. 
   console.log('start fetch')
   const token = getToken();
-    fetch("http://localhost:3000/create-checkout-session", {
+    fetch("/create-checkout-session", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
