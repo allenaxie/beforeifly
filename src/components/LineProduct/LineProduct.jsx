@@ -10,9 +10,15 @@ export default function LineProduct ({lineProduct, cart, setCart}) {
 
     async function handleChangeQty (productId, newQty) {
         // Pass in product id and new quantity to API function
-        // console.log(productId, newQty)
         const updatedCart = await ordersAPI.setProductQtyInCart(productId, newQty);
         setCart(updatedCart);
+        if (newQty <= 0) {
+            function removeProduct () {
+                message.error("Product has been removed.")
+            }
+            removeProduct();
+        }
+        
     }
 
 
