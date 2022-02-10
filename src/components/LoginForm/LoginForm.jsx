@@ -7,22 +7,14 @@ import "./LoginForm.css"
 
 
 export default function LoginForm({ setUser }) {
-  // const [credentials, setCredentials] = useState({
-  //   email: '',
-  //   password: ''
-  // });
+
   const [error, setError] = useState('');
   const navigate = useNavigate();
   const { Title } = Typography;
 
-  // function handleChange(evt) {
-  //   setCredentials({ ...credentials, [evt.target.name]: evt.target.value });
-  //   setError('');
-  // }
+
 
   async function handleSubmit(values) {
-    // Prevent form from being submitted to the server
-    // evt.preventDefault();
     try {
       // The promise returned by the signUp service method 
       // will resolve to the user object included in the
@@ -57,8 +49,6 @@ export default function LoginForm({ setUser }) {
               prefix={<UserOutlined className="site-form-item-icon" />}
               placeholder="Email"
               name="email"
-            // value={values.email} 
-            // onChange={handleChange} 
             />
           </Form.Item>
           <Form.Item
@@ -69,8 +59,7 @@ export default function LoginForm({ setUser }) {
               name="password"
               type="password"
               prefix={<LockOutlined className="site-form-item-icon" />}
-              // value={values.password} 
-              // onChange={handleChange}
+
               placeholder="Password"
             />
           </Form.Item>
@@ -81,21 +70,6 @@ export default function LoginForm({ setUser }) {
       </div>
       <p className="error-message">&nbsp;{error}</p>
     </div>
-
-
-
-    //   <div>
-    //   <div className="form-container" onSubmit={handleSubmit}>
-    //     <form autoComplete="off" >
-    //       <label>Email</label>
-    //       <input type="text" name="email" value={credentials.email} onChange={handleChange} required />
-    //       <label>Password</label>
-    //       <input type="password" name="password" value={credentials.password} onChange={handleChange} required />
-    //       <button type="submit">LOG IN</button>
-    //     </form>
-    //   </div>
-    //   <p className="error-message">&nbsp;{error}</p>
-    // </div>
 
   )
 }

@@ -33,7 +33,7 @@ export default function App() {
 
   
 
-  console.log('app-cart', cart)
+  
 
   return (
     <main className="App">
@@ -63,7 +63,6 @@ export default function App() {
               <Route path="/orders" element={<OrderHistoryPage user={user} setUser={setUser} />} />
               <Route path="/orders/cart" element={<NewOrderPage cart={cart} setCart={setCart} />} />
               <Route path="/users" element={<AuthPage hasAccount={hasAccount} setUser={setUser}/>}/>
-              
             </Routes>
           </Content>
         </Layout>

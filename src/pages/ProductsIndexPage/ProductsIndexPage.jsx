@@ -15,8 +15,6 @@ export default function ProductsIndexPage({ productItems, setProductItems, user,
   const [activeCateg, setActiveCateg] = useState('');
 
   
-
-
   useEffect(function () {
     async function getProducts() {
       const products = await productsAPI.getAll();

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import * as userService from "../../utilities/users-service";
 import "antd/dist/antd.css"
 import "./NavBar.css"
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu, Modal, Button, Table, Tag, Space } from "antd";
 import { HomeOutlined, UserAddOutlined, ShoppingCartOutlined, ShoppingOutlined, ImportOutlined, ExportOutlined, ProfileOutlined, UserOutlined } from "@ant-design/icons"
 import AuthPage from "../../pages/AuthPage/AuthPage";
@@ -47,14 +47,18 @@ export default function NavBar({ user, setUser, setHasAccount, cart }) {
     },
   ];
 
-  const dataSource = [
+
+  const dataSource = user ?[
     {
       key: '1',
-      // name: user.name,
-      // email: user.email,
-      // address: user.address,
+      name: user.name,
+      email: user.email,
+      address: user.address,
     }
-  ]
+  ] : 'none'
+    
+
+  
   
 
   return (
@@ -74,6 +78,7 @@ export default function NavBar({ user, setUser, setHasAccount, cart }) {
             >
               Profile
             </Menu.Item>
+            
             <Modal 
             title="User Info" 
             visible={isModalVisible} 
@@ -90,6 +95,7 @@ export default function NavBar({ user, setUser, setHasAccount, cart }) {
                 pagination={{hideOnSinglePage: true}}
               />
             </Modal>
+            
 
 
             <Menu.Item key="4" icon={<ShoppingOutlined />}>

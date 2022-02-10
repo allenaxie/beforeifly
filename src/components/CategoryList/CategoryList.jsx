@@ -14,32 +14,16 @@ export default function CategoryList({ categories, activeCateg, setActiveCateg }
             <TabPane
                 key={categ}
                 tab={categ}
-            // onTabClick={() => setActiveCateg(categ)}
             >
             </TabPane>
-
-       
-        // <Button
-        //     key={categ}
-        //     onClick={() => setActiveCateg(categ)}
-        // >
-        //     {categ}
-        // </Button>
     )
 
     function handleTabClick (key) {
-        console.log(key)
         setActiveCateg(key);
 
     }
 
     return (
-        // <div className="category-tabs">
-        //     <Button onClick={() => setActiveCateg('All')}>
-        //         All
-        //     </Button>
-        //     {categs}
-        // </div>
 
             <Tabs
                 defaultActiveKey="0"
