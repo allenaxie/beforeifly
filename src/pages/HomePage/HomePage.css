@@ -1,14 +1,9 @@
 
 
-/* Search bar */
-.searchInput {
-    margin-bottom: 15px;
-}
-
 /* Carousel */
+
 .carousel {
     width:80%;
-    /* background: linear-gradient(to right,#c1cff2 -50%, #f4f4f7 130%); */
     display: flex;
     justify-content: center;
     align-items: center;

@@ -54,6 +54,7 @@ export default function OrderList ({ordersList}) {
       columns={columns}
       dataSource={data}
       pagination={false}
+
       
       />
     )
