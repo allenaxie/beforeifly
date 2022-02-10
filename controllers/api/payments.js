@@ -21,7 +21,7 @@ async function handlePayment (req,res) {
                     product_data: {
                         name: product.product.name,
                     },
-                    unit_amount: (product.extPrice * 100).toFixed(0),
+                    unit_amount: (product.product.price * 100).toFixed(0),
                 },
                 quantity: product.qty,
             }

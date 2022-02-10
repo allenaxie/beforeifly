@@ -12,11 +12,11 @@ export default function CheckoutSuccessPage ({cart}) {
     const [session, setSession] = useState()
 
     useEffect(function () {
-        async function getSession () {
-            const sessionData = await ordersAPI.getSession();
+        async function checkout () {
+            const sessionData = await ordersAPI.checkout();
             // setSession(sessionData)
         }
-        getSession();
+        checkout();
         console.log('checkout-success-cart',cart);
         console.log('session',session)
     }, [])

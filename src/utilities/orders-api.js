@@ -28,6 +28,6 @@ export function getAll () {
     return sendRequest (BASE_URL);
 }
 
-export function getSession () {
-    return sendRequest (`${BASE_URL}/session`)
-}
+// export function getSession () {
+//     return sendRequest (`${BASE_URL}/cart/checkout`, 'POST')
+// }

@@ -1,4 +1,3 @@
-import OrderListItem from "../OrderListItem/OrderListItem";
 import {Table} from "antd";
 
 export default function OrderList ({ordersList}) {
@@ -17,9 +16,7 @@ export default function OrderList ({ordersList}) {
             totalQty: order.totalQty,
              })
     )
-    // const order = ordersList.map((o, idx) =>
-    //         <OrderListItem order={o} key={idx}/>
-    // )
+ 
 
     const columns = [
         {
@@ -34,7 +31,7 @@ export default function OrderList ({ordersList}) {
             sorter: (a,b) => a.updatedAt - b.updatedAt,
         },
         {
-            title: "Order Total",
+            title: "Order Total ($)",
             dataIndex: "orderTotal",
             key: "orderTotal", 
             sorter: (a,b) => a.orderTotal - b.orderTotal,
