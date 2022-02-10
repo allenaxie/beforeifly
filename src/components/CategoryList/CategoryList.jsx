@@ -7,7 +7,6 @@ export default function CategoryList({ categories, activeCateg, setActiveCateg }
     const { Header, Content } = Layout;
     const { TabPane } = Tabs;
 
-    console.log('categ', activeCateg)
 
     const categs = categories.map((categ, idx) =>
  
