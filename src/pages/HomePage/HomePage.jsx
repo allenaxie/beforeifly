@@ -39,24 +39,32 @@ export default function HomePage({ productItems, setProductItems ,cart, setCart,
     return (
         <Layout className="siteLayout">
             <Content>
-                <Row>
-                    <Col span={18} offset={3} className="carousel-container">
+                <Row className="carousel-row-container">
+                    <Col span={18} className="carousel-container">
                         <Carousel 
-                        autoplay 
-                        className="carousel">        
+                        // autoplay 
+                        className="carousel"> 
                             <div>
-                                <img className="logo-banner" src="https://i.imgur.com/aHhHo3o.png"/>
+                                <Row>
+                                    <Col span={18} offset={1}>
+                                            <img className="banner-one" src="https://i.imgur.com/aHhHo3o.png"/>
+                                    </Col>
+                                </Row>       
                             </div> 
                             <div>
-                                
-                            <img className="sale-banner" src="https://i.imgur.com/hDw3r3N.png"/>  
-                            </div>
+                                <Row>
+                                    <Col span={18} offset={5}>
+                                            <img className="banner-two" src="https://i.imgur.com/hDw3r3N.png"/>
+                                    </Col>
+                                </Row>       
+                            </div> 
                             <div>
-                                
-                            <img className="travel-banner" src="https://i.imgur.com/3lwQCtz.png"/>   
-
-                            </div>
-                                
+                                <Row>
+                                    <Col span={18} offset={1}>
+                                            <img className="banner-three" src="https://i.imgur.com/3lwQCtz.png"/>
+                                    </Col>
+                                </Row>       
+                            </div> 
                         </Carousel>
                     </Col>
                 </Row>

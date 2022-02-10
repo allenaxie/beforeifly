@@ -33,6 +33,7 @@ export default function LineProduct ({lineProduct, cart, setCart}) {
                     <Col span={16} offset={4}>
                         <Image 
                         alt="lineProduct-image"
+                        className="lineProduct-image"
                         src={lineProduct.product.imageURL}
                         />
                     </Col>

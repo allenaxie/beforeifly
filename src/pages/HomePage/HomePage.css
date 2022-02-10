@@ -1,25 +1,31 @@
-
-
 /* Carousel */
 
+.carousel-row-container{
+    display: flex;
+    justify-content: center ;
+}
+
 .carousel {
-    width:80%;
+    width:80vw;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.logo-banner {
+.banner-one {
+    width: 100% !important;
+}
+
+.banner-two {
     width: 60% !important;
 }
 
-.sale-banner {
-    width: 50% !important;
-    
+.banner-three {
+    width: 100% !important;
 }
 
-.travel-banner {
-    width: 90% !important;
+.slick-dots {
+    margin-right: 25vw !important;
 }
 
 /* Featured Products */

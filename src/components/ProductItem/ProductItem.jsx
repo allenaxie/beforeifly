@@ -35,6 +35,7 @@ export default function ProductItem({product, cart, setCart, user}) {
                         <Col span={16} offset={4}>
                         <img
                             alt="product-image"
+                            className="product-image"
                             src={product.imageURL}
                         />
                         </Col>
