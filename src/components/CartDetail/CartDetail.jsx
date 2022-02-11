@@ -54,8 +54,8 @@ export default function CartDetail ({cart, setCart}) {
                             Check Out
                         </Button>
                 </Col>
-                <BackTop visibilityHeight={800}/>
             </Row>
+            <BackTop visibilityHeight={800}/>
         </Layout>
     )
 }
