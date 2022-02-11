@@ -26,7 +26,7 @@ export default function LineProduct ({lineProduct, cart, setCart}) {
             <Card
             className="lineprod-card"
             hoverable
-            extra = {`$${lineProduct.extPrice.toFixed(2)}`}
+            extra = {`$${lineProduct.product.price.toFixed(2)}`}
             cover = {
                
                         <Image 
