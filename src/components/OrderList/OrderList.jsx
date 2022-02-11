@@ -1,15 +1,15 @@
-import {Table, Button, Modal, Card, Image, Row, Col} from "antd";
+import {Table, Button, Modal, Card, Image, Row, Col, Typography} from "antd";
 import { useState } from "react"
 import ModalOrderItem from "../ModalOrderItem/ModalOrderItem";
 
 export default function OrderList ({ordersList}) {
 
     const { Meta } = Card
+    const { Title } = Typography
 
     // Modal
     const [isModalVisible, setIsModalVisible] = useState(false)
     const [modalOrder, setModalOrder] = useState(ordersList[0])
-
 
 
     async function showModal (evt) {
@@ -21,33 +21,6 @@ export default function OrderList ({ordersList}) {
         setModalOrder(currentOrder)
         setIsModalVisible(true)
     }
-
-    
-        // modalOrderCard = modalOrder.lineProducts.map(order => 
-        //     <Card
-        //         className="modal-order-card"
-        //         hoverable
-        //         // extra = {`$${lineProduct.extPrice.toFixed(2)}`}
-        //         cover = {
-        //             <Row>
-        //                 <Col span={16} offset={4}>
-        //                     <Image 
-        //                     alt="lineProduct-image"
-        //                     className="lineProduct-image"
-        //                     src={order.product.imageURL}
-        //                     />
-        //                 </Col>
-        //             </Row>
-        //         }
-        //         >
-        //             <Meta
-        //                 // title = {lineProduct.product.name}
-        //                 // description = {lineProduct.product.description}
-        //             />
-        //             {order.qty}
-        //         </Card>
-        // )
-    
 
     console.log('orderListPage-modalOrder',modalOrder)
 
@@ -119,7 +92,7 @@ export default function OrderList ({ordersList}) {
             <>
             {/* Modal */}
             <Modal
-            title={modalOrder.orderId}
+            title={<Title level={3}>Order Details</Title>}
             visible={isModalVisible}
             width={1000}
             onCancel={handleCancelModal}
@@ -130,10 +103,13 @@ export default function OrderList ({ordersList}) {
             ]}
             >
                 <Row>
-                    <Col span={16}>
+                    <Col span={14}>
                         {modalOrder.lineProducts.map((order, index) => <ModalOrderItem order={order} index={index}/>) }
                     </Col>
-                    <Col>
+                    <Col 
+                    span={10}
+                    justify="end"
+                    >
                         <Row>
                             <Col span={24} offset={3}>
                                 <h2>Total: ${modalOrder.orderTotal}</h2>

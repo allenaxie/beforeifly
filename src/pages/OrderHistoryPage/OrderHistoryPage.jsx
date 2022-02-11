@@ -32,8 +32,12 @@ export default function OrderHistoryPage({user, setUser}) {
 
   return (
     <div className="orderhistorypage-main">
-
-      {orderHistory.length > 0 ? <OrderList ordersList={orderHistory} /> :
+      {orderHistory.length > 0 ? 
+      <>
+      <Title level={2}>Order History</Title>
+      <OrderList ordersList={orderHistory} /> 
+      </>
+      :
       <Result
       status="404"
       title= "Looks like you haven't made any orders yet"

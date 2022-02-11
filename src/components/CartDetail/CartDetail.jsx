@@ -1,4 +1,4 @@
-import { Layout, Row, Col, Button, Typography } from "antd";
+import { Layout, Row, Col, Button, Typography, BackTop } from "antd";
 import "antd/dist/antd.css";
 import LineProduct from "../LineProduct/LineProduct";
 import "@stripe/stripe-js";
@@ -54,6 +54,7 @@ export default function CartDetail ({cart, setCart}) {
                             Check Out
                         </Button>
                 </Col>
+                <BackTop visibilityHeight={800}/>
             </Row>
         </Layout>
     )

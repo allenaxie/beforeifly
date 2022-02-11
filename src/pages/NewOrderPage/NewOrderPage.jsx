@@ -1,4 +1,5 @@
 import { useEffect  } from "react";
+import { BackTop } from "antd";
 import 'antd/dist/antd.css';
 import "./NewOrderPage.css";
 import * as ordersAPI from "../../utilities/orders-api";
@@ -18,7 +19,7 @@ export default function NewOrderPage ({cart, setCart, stripe}) {
     return  (
         <div className="neworderpage-main">
             <CartDetail cart={cart} setCart={setCart} stripe={stripe}/>
-
+            
         </div>
     )
 }
