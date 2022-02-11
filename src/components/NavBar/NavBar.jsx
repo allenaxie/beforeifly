@@ -23,7 +23,7 @@ export default function NavBar({ user, setUser, setHasAccount, cart }) {
     setIsModalVisible(true);
   }
 
-  function handleModalAction () {
+  function handleCancelModal () {
     // Close modal
     setIsModalVisible(false);
   }
@@ -87,9 +87,9 @@ export default function NavBar({ user, setUser, setHasAccount, cart }) {
             <Modal 
             title="User Info" 
             visible={isModalVisible} 
-            onCancel={handleModalAction}
+            onCancel={handleCancelModal}
             footer = {[
-              <Button key="submit" type="primary" onClick={handleModalAction}>
+              <Button key="submit" type="primary" onClick={handleCancelModal}>
                 OK
               </Button>
             ]}

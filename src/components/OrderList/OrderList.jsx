@@ -1,11 +1,26 @@
-import {Table, Button} from "antd";
+import {Table, Button, Modal} from "antd";
+import { useState } from "react"
 
 
 export default function OrderList ({ordersList}) {
 
-    console.log('ordersList',ordersList)
+    // Modal
+    const [isModalVisible, setIsModalVisible] = useState(false)
+    const modalOrder = {};
 
-  let data = []
+
+    function showModal (evt) {
+        console.log(evt.target.innerText)
+        setIsModalVisible(true)
+    }
+
+    function handleCancelModal () {
+        setIsModalVisible(false)
+    }
+
+
+    // Table data
+    let data = []
 
     const order = ordersList.map((order, idx) =>  
             data.push(
@@ -18,13 +33,18 @@ export default function OrderList ({ordersList}) {
              })
     )
  
-
     const columns = [
         {
             title: "Order ID",
             dataIndex: "orderId",
             key: "orderId", 
-            render: orderId => <Button type="link">{orderId}</Button>,
+            render: orderId => 
+            <Button 
+            type="link"
+            onClick={showModal} 
+            >
+                {orderId}
+            </Button>,
         },
         {
             title: "Date Purchased",
@@ -45,11 +65,26 @@ export default function OrderList ({ordersList}) {
         },
     ]
 
+   
+
     return (
-      <Table 
-      columns={columns}
-      dataSource={data}
-      pagination={false}
-      />
+        <>
+            {/* Table */}
+            <Table 
+            columns={columns}
+            dataSource={data}
+            pagination={false}
+            />
+
+            {/* Modal */}
+            <Modal
+            title={order}
+            visible={isModalVisible}
+            onCancel={handleCancelModal}
+            >
+
+            </Modal>
+        
+        </>
     )
 }
