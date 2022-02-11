@@ -1,4 +1,4 @@
-import { Card, Row, Col, Image, Space } from "antd";
+import { Card, Row, Col, Image, Space, Statistic } from "antd";
 import "./ModalOrderItem.css";
 
 export default function ModalOrderItem ({order,index}) {
@@ -12,7 +12,11 @@ export default function ModalOrderItem ({order,index}) {
         hoverable
         title={order.product.name}
         extra= {
-            <h2>Price: ${order.product.price}</h2>
+            <Statistic
+            title="Price: "
+            prefix="$"
+            value={order.product.price}
+            />
         }
         cover = {
             <Row className="modal-order-img-container">
@@ -29,6 +33,7 @@ export default function ModalOrderItem ({order,index}) {
         actions ={[
             <Row justify="end">
                 <Col>
+                    
                     <h3>Subtotal({order.qty} items): ${order.extPrice}</h3>
                 </Col>
             </Row>

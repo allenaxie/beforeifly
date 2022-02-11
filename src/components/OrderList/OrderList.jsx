@@ -1,4 +1,4 @@
-import {Table, Button, Modal, Card, Image, Row, Col, Typography} from "antd";
+import {Table, Button, Modal, Card, Image, Row, Col, Typography, Affix, Statistic} from "antd";
 import { useState } from "react"
 import ModalOrderItem from "../ModalOrderItem/ModalOrderItem";
 
@@ -110,16 +110,29 @@ export default function OrderList ({ordersList}) {
                     span={10}
                     justify="end"
                     >
-                        <Row>
-                            <Col span={24} offset={3}>
-                                <h2>Total: ${modalOrder.orderTotal}</h2>
-                            </Col>
-                        </Row>
-                        <Row>
-                            <Col span={24} offset={3}>
-                                <h2>Items: {modalOrder.totalQty} </h2>
-                            </Col>
-                        </Row>
+                        
+
+                            <Row>
+                                <Col span={24} offset={3}>                             
+                                    <Statistic
+                                    title="Total: "
+                                    prefix="$"
+                                    value={modalOrder.orderTotal}
+                                    />
+                                   
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col span={24} offset={3}>                                        
+                                        <Statistic
+                                        title="Items: "
+                                        value={`${modalOrder.totalQty}`}
+                                        />
+
+                                    
+                                </Col>
+                            </Row>
+                        
                     </Col>
                 </Row>
 
