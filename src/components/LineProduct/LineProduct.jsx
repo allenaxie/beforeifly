@@ -46,6 +46,7 @@ export default function LineProduct({ lineProduct, cart, setCart }) {
             >
                 <Col
                     xs={{ span: 24 }}
+                    md={{ span: 14, offset: 2 }}
                     lg={{ span: 16, offset:2 }}
                     
                 >
@@ -55,6 +56,7 @@ export default function LineProduct({ lineProduct, cart, setCart }) {
                 </Col>
                 <Col
                     xs={{ span: 24, offset: 1 }}
+                    md={{ span: 4, offset: 1 }}
                     lg={{ span: 4, offset: 1}}
                 >
                     <Button
