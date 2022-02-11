@@ -68,12 +68,14 @@ export default function OrderList ({ordersList}) {
             title: "Order Total ($)",
             dataIndex: "orderTotal",
             key: "orderTotal", 
+            responsive:['sm'],
             sorter: (a,b) => a.orderTotal - b.orderTotal,
         },
         {
             title: "No. of Items",
             dataIndex: "totalQty",
             key: "totalQty", 
+            responsive:['md'],
         },
     ]
 
@@ -110,8 +112,6 @@ export default function OrderList ({ordersList}) {
                     span={10}
                     justify="end"
                     >
-                        
-
                             <Row>
                                 <Col span={24} offset={3}>                             
                                     <Statistic
