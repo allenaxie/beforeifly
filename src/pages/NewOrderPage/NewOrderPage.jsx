@@ -23,7 +23,7 @@ export default function NewOrderPage ({cart, setCart, stripe}) {
         className="neworderpage-main"
         >
             <CartDetail cart={cart} setCart={setCart} stripe={stripe}/>
-            
+            <BackTop visibilityHeight={800}/>
         </div>
     )
 }
