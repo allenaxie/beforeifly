@@ -117,7 +117,7 @@ export default function OrderList ({ordersList}) {
                                     <Statistic
                                     title="Total: "
                                     prefix="$"
-                                    value={modalOrder.orderTotal}
+                                    value={modalOrder.orderTotal.toFixed(2)}
                                     />
                                    
                                 </Col>
