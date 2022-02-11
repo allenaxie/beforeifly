@@ -34,18 +34,19 @@ export default function CartDetail({ cart, setCart }) {
             <Row gutter={[32, 32]}>
                 <Col
                     xs={{ span: 20, offset: 2 }}
-                    md={{ span: 10, offset: 3 }}
+                    md={{ span: 14, offset: 1 }}
                 >
                     {lineProducts}
-
-
                 </Col>
                 <Col
                     xs={{ span: 16, offset: 4 }}
-                    md={{ span: 6, offset: 3 }}
+                    md={{ span: 8, offset: 1 }}
                 >
                     <Row>
-                        <Col span={12}>
+                        <Col 
+                        xs={{ span:16}}
+                        md={{span:12}}
+                        >
                             <Statistic
                                 title="Total: "
                                 prefix="$"
@@ -53,7 +54,10 @@ export default function CartDetail({ cart, setCart }) {
                             />
 
                         </Col>
-                        <Col span={12}>
+                        <Col 
+                        xs={{ span: 8}}
+                        md={{span:12}}
+                        >
                             <Statistic
                                 title="Items: "
                                 value={cart.totalQty}
@@ -68,12 +72,8 @@ export default function CartDetail({ cart, setCart }) {
                             >
                                 Check Out
                             </Button>
-
-
-
                 </Col>
             </Row>
-
         </Layout>
     )
 }

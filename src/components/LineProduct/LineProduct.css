@@ -21,3 +21,20 @@
     margin-left: 20px;
 }
 
+@media only screen and (max-width:576px) {
+    .line-prod-card-footer {
+        padding: 0px;
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .change-qty-btn {
+        margin-left:0 !important;
+    }
+    .change-qty-text {
+        margin: 5px;
+    }
+    .remove-LP-btn {
+        margin-top: 15px !important;
+    }
+}
