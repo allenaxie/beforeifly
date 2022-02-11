@@ -49,7 +49,14 @@ export default function LineProduct ({lineProduct, cart, setCart}) {
                         
                     </Col>
                     <Col span={4} align="end">
-                        <Button>Remove</Button>
+                        <Button 
+                        className="remove-LP-btn" 
+                        type="primary" 
+                        danger 
+                        onClick={() => handleChangeQty(lineProduct.product._id, lineProduct.qty = 0)}
+                        >
+                            Remove
+                        </Button>
                     </Col>
 
                 </Row>
