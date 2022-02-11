@@ -1,4 +1,4 @@
-import { Row, Col, Card, Button, Image, message } from "antd";
+import { Row, Col, Card, Button, Image, message, Divider } from "antd";
 import "antd/dist/antd.css";
 import "./LineProduct.css"
 import * as ordersAPI from "../../utilities/orders-api";
@@ -27,35 +27,34 @@ export default function LineProduct ({lineProduct, cart, setCart}) {
             className="lineprod-card"
             hoverable
             extra = {`$${lineProduct.extPrice.toFixed(2)}`}
-            
             cover = {
-                // <Row>
-                //     <Col span={16} offset={4}>
+               
                         <Image 
                         alt="lineProduct-image"
                         className="lineProduct-image"
                         src={lineProduct.product.imageURL}
-                        />
-                    /* </Col>
-                </Row> */
-            }
-            actions = {[
-                
-                    <Button onClick={() => handleChangeQty(lineProduct.product._id, lineProduct.qty -1)}> - </Button>,
-                    <span>
-                        Quantity: {lineProduct.qty}
-                    </span>,
-                    <Button onClick={() => handleChangeQty(lineProduct.product._id, lineProduct.qty + 1)}> + </Button>
-               
-            ]
-
+                        />       
             }
             >
                 <Meta
                     title = {lineProduct.product.name}
                     description = {lineProduct.product.description}
                 />
-                
+                <Divider/>
+                <Row className="line-prod-card-footer">
+                    <Col span={17} offset={3} align="center">
+                        <Button className="change-qty" onClick={() => handleChangeQty(lineProduct.product._id, lineProduct.qty -1)}> - </Button>
+                        <span className="change-qty"> Quantity: {lineProduct.qty} </span>
+                        <Button className="change-qty" onClick={() => handleChangeQty(lineProduct.product._id, lineProduct.qty + 1)}> + </Button>
+                        
+                    </Col>
+                    <Col span={4} align="end">
+                        <Button>Remove</Button>
+                    </Col>
+
+                </Row>
+                    
+               
             </Card>
             
       

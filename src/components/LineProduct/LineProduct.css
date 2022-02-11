@@ -11,3 +11,12 @@
 .lineProduct-image {
     width: 100px !important;
 }
+
+.line-prod-card-footer {
+    margin-top: 25px;
+    padding: 10px;
+}
+
+.change-qty {
+    margin-left: 20px;
+}
