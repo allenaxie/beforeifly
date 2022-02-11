@@ -29,15 +29,15 @@ export default function LineProduct ({lineProduct, cart, setCart}) {
             extra = {`$${lineProduct.extPrice.toFixed(2)}`}
             
             cover = {
-                <Row>
-                    <Col span={16} offset={4}>
+                // <Row>
+                //     <Col span={16} offset={4}>
                         <Image 
                         alt="lineProduct-image"
                         className="lineProduct-image"
                         src={lineProduct.product.imageURL}
                         />
-                    </Col>
-                </Row>
+                    /* </Col>
+                </Row> */
             }
             actions = {[
                 

@@ -1,23 +1,62 @@
-import {Table, Button, Modal} from "antd";
+import {Table, Button, Modal, Card, Image, Row, Col} from "antd";
 import { useState } from "react"
-
+import ModalOrderItem from "../ModalOrderItem/ModalOrderItem";
 
 export default function OrderList ({ordersList}) {
 
+    const { Meta } = Card
+
     // Modal
     const [isModalVisible, setIsModalVisible] = useState(false)
-    const modalOrder = {};
+    const [modalOrder, setModalOrder] = useState(ordersList[0])
 
 
-    function showModal (evt) {
+
+    async function showModal (evt) {
         console.log(evt.target.innerText)
+        const orderNum = evt.target.innerText
+        // Find order that matches order ID
+        const currentOrder = await ordersList.find(order => order.orderId === orderNum)
+        // Track order clicked in modal
+        setModalOrder(currentOrder)
         setIsModalVisible(true)
     }
+
+    
+        // modalOrderCard = modalOrder.lineProducts.map(order => 
+        //     <Card
+        //         className="modal-order-card"
+        //         hoverable
+        //         // extra = {`$${lineProduct.extPrice.toFixed(2)}`}
+        //         cover = {
+        //             <Row>
+        //                 <Col span={16} offset={4}>
+        //                     <Image 
+        //                     alt="lineProduct-image"
+        //                     className="lineProduct-image"
+        //                     src={order.product.imageURL}
+        //                     />
+        //                 </Col>
+        //             </Row>
+        //         }
+        //         >
+        //             <Meta
+        //                 // title = {lineProduct.product.name}
+        //                 // description = {lineProduct.product.description}
+        //             />
+        //             {order.qty}
+        //         </Card>
+        // )
+    
+
+    console.log('orderListPage-modalOrder',modalOrder)
 
     function handleCancelModal () {
         setIsModalVisible(false)
     }
 
+
+    
 
     // Table data
     let data = []
@@ -75,15 +114,44 @@ export default function OrderList ({ordersList}) {
             dataSource={data}
             pagination={false}
             />
-
+            {/* Render modal info if an order is clicked */}
+            {modalOrder ?
+            <>
             {/* Modal */}
             <Modal
-            title={order}
+            title={modalOrder.orderId}
             visible={isModalVisible}
+            width={1000}
             onCancel={handleCancelModal}
+            footer = {[
+                <Button key="submit" type="primary" onClick={handleCancelModal}>
+                    OK
+                </Button>
+            ]}
             >
+                <Row>
+                    <Col span={16}>
+                        {modalOrder.lineProducts.map((order, index) => <ModalOrderItem order={order} index={index}/>) }
+                    </Col>
+                    <Col>
+                        <Row>
+                            <Col span={24} offset={3}>
+                                <h2>Total: ${modalOrder.orderTotal}</h2>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col span={24} offset={3}>
+                                <h2>Items: {modalOrder.totalQty} </h2>
+                            </Col>
+                        </Row>
+                    </Col>
+                </Row>
 
             </Modal>
+            </>
+            :
+            ""
+        }
         
         </>
     )
