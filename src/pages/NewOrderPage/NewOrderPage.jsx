@@ -16,8 +16,12 @@ export default function NewOrderPage ({cart, setCart, stripe}) {
         getCart();
     }, [])
 
+    let style1 = {height: '100vh'}
+   
     return  (
-        <div className="neworderpage-main">
+        <div 
+        className="neworderpage-main"
+        >
             <CartDetail cart={cart} setCart={setCart} stripe={stripe}/>
             
         </div>

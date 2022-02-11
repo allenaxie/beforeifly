@@ -68,8 +68,7 @@ export default function ProductsIndexPage({ productItems, setProductItems, user,
         </Row>
       </Content>
       
-          <BackTop visibilityHeight={800}/>
-        
+      <BackTop className="backtop" visibilityHeight={800}/>
     </Layout>
   )
 }
