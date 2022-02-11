@@ -2,12 +2,9 @@ import { Link } from "react-router-dom";
 import * as userService from "../../utilities/users-service";
 import "antd/dist/antd.css"
 import "./NavBar.css"
-import { useState, useEffect } from "react";
-import { Menu, Modal, Button, Table, Tag, Space, Badge } from "antd";
+import { useState } from "react";
+import { Menu, Modal, Button, Table } from "antd";
 import { HomeOutlined, UserAddOutlined, ShoppingCartOutlined, ShoppingOutlined, ImportOutlined, ExportOutlined, ProfileOutlined, UserOutlined } from "@ant-design/icons"
-import AuthPage from "../../pages/AuthPage/AuthPage";
-
-
 
 export default function NavBar({ user, setUser, setHasAccount, cart }) {
 
@@ -48,7 +45,8 @@ export default function NavBar({ user, setUser, setHasAccount, cart }) {
     {
       title: 'Phone Number',
       dataIndex: 'phone',
-      key: 'phone'
+      key: 'phone',
+      responsive:["sm"]
     },
   ];
 
@@ -98,6 +96,7 @@ export default function NavBar({ user, setUser, setHasAccount, cart }) {
                 columns={columns}
                 dataSource={dataSource}
                 pagination={{ hideOnSinglePage: true }}
+                className="user-infotable"
               />
             </Modal>
 
