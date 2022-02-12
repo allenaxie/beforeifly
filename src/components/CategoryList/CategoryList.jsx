@@ -1,15 +1,9 @@
-import { Button, Layout, Tabs } from "antd";
-import "./CategoryList.css";
+import { Layout, Tabs } from "antd";
 
-
-export default function CategoryList({ categories, activeCateg, setActiveCateg }) {
-
-    const { Header, Content } = Layout;
+export default function CategoryList({ categories, setActiveCateg }) {
     const { TabPane } = Tabs;
 
-
-    const categs = categories.map((categ, idx) =>
- 
+    const categs = categories.map((categ) =>
             <TabPane
                 key={categ}
                 tab={categ}
@@ -19,24 +13,21 @@ export default function CategoryList({ categories, activeCateg, setActiveCateg }
 
     function handleTabClick (key) {
         setActiveCateg(key);
-
     }
 
     return (
-
             <Tabs
                 defaultActiveKey="0"
                 className="category-tabs"
                 centered
-                onTabClick={handleTabClick}>
+                onTabClick={handleTabClick}
+                >
                 <TabPane
                     tab={<span>All</span>}
                     key="All"
                 >
                 </TabPane>
-
                 {categs}
             </Tabs>
-            
-            )
+    )
 }

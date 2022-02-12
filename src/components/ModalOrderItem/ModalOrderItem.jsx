@@ -1,8 +1,7 @@
-import { Card, Row, Col, Image, Space, Statistic } from "antd";
+import { Card, Row, Col, Image, Statistic } from "antd";
 import "./ModalOrderItem.css";
 
-export default function ModalOrderItem ({order,index}) {
-
+export default function ModalOrderItem ({order}) {
     console.log('modalorder',order)
     const { Meta } = Card;
 
@@ -27,13 +26,11 @@ export default function ModalOrderItem ({order,index}) {
                     src={order.product.imageURL}
                     />
                 </Col>
-                
             </Row>
         }
         actions ={[
             <Row justify="end">
                 <Col>
-                    
                     <h3>Subtotal({order.qty} items): ${order.extPrice}</h3>
                 </Col>
             </Row>
@@ -42,7 +39,6 @@ export default function ModalOrderItem ({order,index}) {
             <Meta
             description = {order.product.description}
             />
-            
         </Card>
     )
 }

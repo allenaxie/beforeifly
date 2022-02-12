@@ -1,10 +1,8 @@
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 const Order = require('../../models/order');
 
-
 module.exports = {
     handlePayment,
-
 }
 
 async function handlePayment (req,res) {
@@ -29,10 +27,8 @@ async function handlePayment (req,res) {
         success_url: `${process.env.SERVER_URL}/orders/checkout-success?session_id={CHECKOUT_SESSION_ID}`,
         cancel_url: `${process.env.SERVER_URL}/orders/cart`,
       });
-      console.log('stripe sessionsssss', stripe.checkout.sessions)
     //   Redirect to Stripe payment page
       res.json({ url: session.url })
-      console.log('payment finished')
 }
 
 

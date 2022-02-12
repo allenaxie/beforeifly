@@ -125,6 +125,5 @@ export default function SignUpForm({ setUser }) {
             </div>
             <p className="error-message">&nbsp;{error}</p>
         </div>
-
     )
 }

@@ -1,5 +1,4 @@
 const Order = require('../../models/order');
-const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 module.exports = {
     cart,

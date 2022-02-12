@@ -1,6 +1,4 @@
-// Interact with components
-
-
+// Interacts with components
 import * as usersAPI from './users-api';
 
 export async function signUp(userData) {
@@ -38,7 +36,6 @@ export async function checkToken () {
   const dateStr = await usersAPI.checkToken();
   return new Date(dateStr);
 }
-
 
 export function getUser() {
   const token = getToken();

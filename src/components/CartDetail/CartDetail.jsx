@@ -6,7 +6,6 @@ import "@stripe/react-stripe-js";
 import "./CartDetail.css";
 import * as paymentsAPI from "../../utilities/payments-api"
 
-
 export default function CartDetail({ cart, setCart }) {
 
     const { Title } = Typography
@@ -43,9 +42,9 @@ export default function CartDetail({ cart, setCart }) {
                     md={{ span: 8, offset: 1 }}
                 >
                     <Row>
-                        <Col 
-                        xs={{ span:16}}
-                        md={{span:12}}
+                        <Col
+                            xs={{ span: 16 }}
+                            md={{ span: 12 }}
                         >
                             <Statistic
                                 title="Total: "
@@ -54,9 +53,9 @@ export default function CartDetail({ cart, setCart }) {
                             />
 
                         </Col>
-                        <Col 
-                        xs={{ span: 8}}
-                        md={{span:12}}
+                        <Col
+                            xs={{ span: 8 }}
+                            md={{ span: 12 }}
                         >
                             <Statistic
                                 title="Items: "
@@ -64,14 +63,14 @@ export default function CartDetail({ cart, setCart }) {
                             />
                         </Col>
                     </Row>
-                            <Button
-                                htmlType="submit"
-                                type="primary"
-                                className="checkout-btn"
-                                onClick={handlePayment}
-                            >
-                                Check Out
-                            </Button>
+                    <Button
+                        htmlType="submit"
+                        type="primary"
+                        className="checkout-btn"
+                        onClick={handlePayment}
+                    >
+                        Check Out
+                    </Button>
                 </Col>
             </Row>
         </Layout>

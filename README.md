@@ -48,7 +48,7 @@ Link to Trello Board -- https://trello.com/b/4xVWHSU3/before-i-fly
 
 Link to Deployed App -- <https://before-i-fly.herokuapp.com/>
 
-## ⏭️ Icebox Items
+## ⏭️ Next Steps
 
 - Allow users to create, edit, and delete reviews for each product.
 - Allows users to rate each product from 1 to 5 stars.

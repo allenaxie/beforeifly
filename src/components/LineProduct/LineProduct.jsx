@@ -3,8 +3,7 @@ import "antd/dist/antd.css";
 import "./LineProduct.css"
 import * as ordersAPI from "../../utilities/orders-api";
 
-
-export default function LineProduct({ lineProduct, cart, setCart }) {
+export default function LineProduct({ lineProduct, setCart }) {
 
     const { Meta } = Card
 
@@ -18,9 +17,7 @@ export default function LineProduct({ lineProduct, cart, setCart }) {
             }
             removeProduct();
         }
-
     }
-
 
     return (
         <Card
@@ -28,7 +25,6 @@ export default function LineProduct({ lineProduct, cart, setCart }) {
             hoverable
             extra={`$${lineProduct.product.price.toFixed(2)}`}
             cover={
-
                 <Image
                     alt="lineProduct-image"
                     className="lineProduct-image"
@@ -48,7 +44,6 @@ export default function LineProduct({ lineProduct, cart, setCart }) {
                     xs={{ span: 24 }}
                     md={{ span: 14, offset: 2 }}
                     lg={{ span: 16, offset:2 }}
-                    
                 >
                     <Button className="change-qty-btn" onClick={() => handleChangeQty(lineProduct.product._id, lineProduct.qty - 1)}> - </Button>
                     <span className="change-qty-text"> Quantity: {lineProduct.qty} </span>
@@ -70,7 +65,5 @@ export default function LineProduct({ lineProduct, cart, setCart }) {
                 </Col>
             </Row>
         </Card>
-
-
     )
 }

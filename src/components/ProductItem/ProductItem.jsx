@@ -1,5 +1,4 @@
-import { Link } from "react-router-dom";
-import { Layout, Row, Col, Card, Button, message } from "antd";
+import { Row, Col, Card, Button, message } from "antd";
 import 'antd/dist/antd.css';
 import "./ProductItem.css";
 import { ShoppingCartOutlined } from "@ant-design/icons";
@@ -29,7 +28,6 @@ export default function ProductItem({product, cart, setCart, user}) {
                 className="pi-card"
                 hoverable
                 extra = {`$${product.price}`}
-                
                 cover = {
                     <Row>
                         <Col span={16} offset={4}>
@@ -41,14 +39,11 @@ export default function ProductItem({product, cart, setCart, user}) {
                         </Col>
                     </Row>
                 }
-                 
                 actions = {[
                     <>
                         {user && <Button onClick={()=>handleAddToOrder(product._id)} icon={<ShoppingCartOutlined key="cart" />}>Add To Cart </Button>}
-                        
                     </>
                 ]}
-            
             >
                 <Meta
                     title={product.name}

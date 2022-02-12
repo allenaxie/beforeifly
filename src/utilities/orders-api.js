@@ -1,6 +1,5 @@
 import sendRequest from "./send-request";
 
-
 const BASE_URL = '/api/orders';
 
 export function getCart() {
@@ -28,6 +27,3 @@ export function getAll () {
     return sendRequest (BASE_URL);
 }
 
-// export function getSession () {
-//     return sendRequest (`${BASE_URL}/cart/checkout`, 'POST')
-// }

@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import * as userService from "../../utilities/users-service";
 import "antd/dist/antd.css"
-import "./NavBar.css"
 import { useState } from "react";
 import { Menu, Modal, Button, Table } from "antd";
 import { HomeOutlined, UserAddOutlined, ShoppingCartOutlined, ShoppingOutlined, ImportOutlined, ExportOutlined, ProfileOutlined, UserOutlined } from "@ant-design/icons"
@@ -25,7 +24,7 @@ export default function NavBar({ user, setUser, setHasAccount, cart }) {
     setIsModalVisible(false);
   }
 
-
+  // User modal table
   const columns = [
     {
       title: 'Name',
@@ -46,11 +45,10 @@ export default function NavBar({ user, setUser, setHasAccount, cart }) {
       title: 'Phone Number',
       dataIndex: 'phone',
       key: 'phone',
-      responsive:["sm"]
+      responsive: ["sm"]
     },
   ];
 
-  console.log(user)
   const dataSource = user ? [
     {
       key: '1',
@@ -60,10 +58,6 @@ export default function NavBar({ user, setUser, setHasAccount, cart }) {
       phone: user.phoneNumber,
     }
   ] : 'none'
-
-
-
-
 
   return (
     <Menu theme="dark" mode="inline" defaultSelectedKeys={[1]}>
@@ -108,23 +102,18 @@ export default function NavBar({ user, setUser, setHasAccount, cart }) {
             <Menu.Item key="5" icon={<ProfileOutlined />}>
               <Link to="/orders">Order History</Link>
             </Menu.Item>
-
             <Menu.Item key="6"
               icon={
                 <ShoppingCartOutlined />
-
               }
             >
               <Link to="/orders/cart">
                 Cart
               </Link>
-
             </Menu.Item>
-
             <Menu.Item key="7" icon={<ExportOutlined />}>
               <Link to="/" onClick={handleLogOut}>Sign out</Link>
             </Menu.Item>
-
           </>
           :
           <>
@@ -142,6 +131,5 @@ export default function NavBar({ user, setUser, setHasAccount, cart }) {
           </>
       }
     </Menu>
-
   )
 }

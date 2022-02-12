@@ -3,16 +3,11 @@ import { useNavigate } from "react-router-dom";
 import * as usersService from '../../utilities/users-service';
 import { Form, Input, Button, Typography } from "antd";
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
-import "./LoginForm.css"
-
 
 export default function LoginForm({ setUser }) {
-
   const [error, setError] = useState('');
   const navigate = useNavigate();
   const { Title } = Typography;
-
-
 
   async function handleSubmit(values) {
     try {
@@ -27,8 +22,6 @@ export default function LoginForm({ setUser }) {
       setError('Log In Failed - Try Again');
     }
   }
-
-
 
   return (
     <div>
@@ -59,7 +52,6 @@ export default function LoginForm({ setUser }) {
               name="password"
               type="password"
               prefix={<LockOutlined className="site-form-item-icon" />}
-
               placeholder="Password"
             />
           </Form.Item>
@@ -70,7 +62,6 @@ export default function LoginForm({ setUser }) {
       </div>
       <p className="error-message">&nbsp;{error}</p>
     </div>
-
   )
 }
 
